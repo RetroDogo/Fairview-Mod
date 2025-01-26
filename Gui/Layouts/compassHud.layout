@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<MyGUI type="Layout" version="3.2.0">
+    <Widget type="Widget" skin="PanelEmpty" name="TCCPanel" align="HCenter Top" position_real="0 0 1 0.2" >
+		<Property key="NeedKey" value="false" />
+        <Property key="NeedMouse" value="false" />
+        <Widget type="Widget" skin="HudBackgroundLarge" name="CompassPanel" position_real="0.40 0.01 0.20 0.28" >
+            <Widget type="TextBox" skin="TextBox" name="CompassArrow" position_real="0.01 0.01 1 0.30">
+                <Property key="FontName" value="MonoMedium" />
+                <Property key="Caption" value="v" />
+                <Property key="TextAlign" value="Center" />
+                <Property key="TextShadow" value="true" />
+            </Widget>
+			<Widget type="TextBox" skin="TextBox" name="CompassText4" position_real="0 0.31 1 0.30">
+                <Property key="FontName" value="MonoMedium" />
+                <Property key="Caption" value="N.NE.E.SE.S.SW.W.NW." />
+                <Property key="TextAlign" value="Center" />
+                <Property key="TextShadow" value="true" />
+            </Widget>
+            <Widget type="TextBox" skin="TextBox" name="CompassText3" position_real="0.0045 0.31 1 0.30">
+                <Property key="FontName" value="MonoMedium" />
+                <Property key="Caption" value="N.NE.E.SE.S.SW.W.NW." />
+                <Property key="TextAlign" value="Center" />
+                <Property key="TextShadow" value="true" />
+            </Widget>
+			<Widget type="TextBox" skin="TextBox" name="CompassText2" position_real="0.009 0.31 1 0.30">
+                <Property key="FontName" value="MonoMedium" />
+                <Property key="Caption" value="N.NE.E.SE.S.SW.W.NW." />
+                <Property key="TextAlign" value="Center" />
+                <Property key="TextShadow" value="true" />
+            </Widget>
+			<Widget type="TextBox" skin="TextBox" name="CompassText1" position_real="0.0135 0.31 1 0.30">
+                <Property key="FontName" value="MonoMedium" />
+                <Property key="Caption" value="N.NE.E.SE.S.SW.W.NW." />
+                <Property key="TextAlign" value="Center" />
+                <Property key="TextShadow" value="true" />
+            </Widget>
+			<Widget type="TextBox" skin="TextBox" name="CompassText0" position_real="0.018 0.31 1 0.30">
+                <Property key="FontName" value="MonoMedium" />
+                <Property key="Caption" value="N.NE.E.SE.S.SW.W.NW." />
+                <Property key="TextAlign" value="Center" />
+                <Property key="TextShadow" value="true" />
+            </Widget>
+            <Widget type="TextBox" skin="TextBox" name="CompassDegree" position_real="0.01 0.61 1 0.30">
+                <Property key="FontName" value="MonoMedium" />
+                <Property key="Caption" value="-0123456789" />
+                <Property key="TextAlign" value="Center" />
+                <Property key="TextShadow" value="true" />
+            </Widget>
+            <Widget type="Widget" skin="HudBackgroundShadowLarge" name="CellPanel" position_real="0.01 0.64 0.25 0.30">
+                <Widget type="TextBox" skin="TextBox" name="CellText" position_real="0 0 1 1">
+                    <Property key="FontName" value="MonoMedium" />
+                    <Property key="Caption" value="-0123456789," />
+                    <Property key="TextAlign" value="Center" />
+                    <Property key="TextShadow" value="true" />
+                </Widget>
+            </Widget>
+            <Widget type="Widget" skin="HudBackgroundShadowLarge" name="CoordPanel" position_real="0.64 0.64 0.35 0.30" >
+                <Widget type="TextBox" skin="TextBox" name="CoordText" position_real="0 0 1 1">
+                    <Property key="FontName" value="MonoMedium" />
+                    <Property key="Caption" value="-0123456789," />
+                    <Property key="TextAlign" value="Center" />
+                    <Property key="TextShadow" value="true" />
+                </Widget>
+            </Widget>
+        </Widget>
+    </Widget>
+
+    <CodeGeneratorSettings />
+</MyGUI>

@@ -1,0 +1,54 @@
+Already done
+    Announcement block is fully done, could be changed but is done
+    Licence Plate is done , could be changed but is done
+    Currency json table is fully working and stores new money if a player joins
+    daylight cycle works now, fully syncs with clients too
+    Daylight sensor works but isnt configurable ( will add configuration if needed )
+    Currency system is fully built (i need to make other stuff that interact with it but its really done)
+    daily paycheck system is done and is baised off the 3rd value in the Currency
+    finally migrated the whole mod to use a interactable instead
+    made a "queue" system for messages that were important no matter the time
+    made a very nice little thing that saves the limited inventory when using unlimited
+    made the mother fucking teams and their color counter parts, could add more things with the teams
+    also did the pvp while at it too and its somewhat balanced
+    made world saving instead of global saving while still using jsons
+    added set spawn for host only so that a different spot can be chosen for spawning
+    added working armor, it does need some balancing but the concept works
+    added armor visuals, i think it works for all clients, it also removes itself if you are using clientlock
+    made a little hand tool, proably going to use it for everything that hands can do
+    fixed weird client bugs
+    made the handcuffs work actually!
+    added item drops, when you drag stuff out of your inventories
+
+Very Important
+
+Somewhat Important
+    work on hands to add patting for checking inventories
+        like a list of all items?
+        like list of all items but some are yellow and red (dangerous)?
+        or just shows dangerous in yellow and red?
+        i need to check with bluu about it
+    temperarly disable teams
+        just comment out all teams
+        change the nametags to work
+        also make the name tags show up faster but not all the time
+    add player list
+        a command like /pl
+        it shows a gui of players on screen
+        i could try to do some cool stuff with it idk
+
+Not really important just cool
+    make a new shop ui that looks epic
+    make the pvp mod hits, make a little ding sound perhaps?
+        find a little ding sound that plays for the attacker when hitting someone
+    add a lil block that allows to pay money
+        the money cant be changed, can only be changed once or host only.
+        outputs a signal for a second too
+        could allow gambling lmao
+    add a leaderbooard gui and block that display leaderboard of money 
+        players can hide their cash amount but not their position
+        players with the most time in the server also gets put on leaderboard
+        players that paid money in one transaction is also on leaderboard
+        players with the most deaths are on leaderboards
+        players with the most time without deaths are on leaderboards
+        it gets updated every 10 minutes

@@ -1,0 +1,414 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<MyGUI type="Layout" version="3.2.0">
+    <Widget type="Widget" skin="ClientTileSkin" position_real="0.26250000000000001 0 0.5078125 0.1111111111111111" name="BG 1"/>
+    <Widget type="Widget" skin="ClientTileSkin" position_real="0.26250000000000001 0 0.5078125 0.15740740740740741" name="BG 2"/>
+    <Widget type="Widget" skin="ClientTileSkin" position_real="0.26250000000000001 0 0.5078125 0.20370370370370369" name="BG 3"/>
+    <Widget type="Widget" skin="ClientTileSkin" position_real="0.26250000000000001 0 0.5078125 0.25" name="BG 4"/>
+    <Widget type="Widget" skin="ClientTileSkin" position_real="0.26250000000000001 0 0.5078125 0.29629629629629628" name="BG 5"/>
+    <Widget type="Widget" skin="ClientTileSkin" position_real="0.26250000000000001 0 0.5078125 0.34259259259259262" name="BG 6"/>
+    <Widget type="Widget" skin="PanelEmpty" position_real="0.26250000000000001 0 0.5078125 0.34259259259259262">
+        <Widget type="Widget" skin="PanelSkin" position_real="0.015384615384615385 0.15945945945945947 0.19487179487179487 0.13513513513513514" name="playerBox 1">
+            <Widget type="TextBox" skin="TextBox" position_real="0.026315789473684209 0.10000000000000001 0.94736842105263153 0.40000000000000002" name="nameText 1">
+                <Property key="FontName" value="SM_TextLabel"/>
+                <Property key="Caption" value="Retro Dogo | ID: 1"/>
+                <Property key="TextAlign" value="Center"/>
+            </Widget>
+            <Widget type="TextBox" skin="TextBox" position_real="0.026315789473684209 0.5 0.94736842105263153 0.40000000000000002" name="extraText 1">
+                <Property key="FontName" value="SM_TextLabel"/>
+                <Property key="Caption" value="Total Time: 5d4h2m52s"/>
+                <Property key="TextAlign" value="Center"/>
+            </Widget>
+        </Widget>
+        <Widget type="Widget" skin="PanelSkin" position_real="0.21025641025641026 0.15945945945945947 0.19487179487179487 0.13513513513513514" name="playerBox 2">
+            <Widget type="TextBox" skin="TextBox" position_real="0.026315789473684209 0.10000000000000001 0.94736842105263153 0.40000000000000002" name="nameText 2">
+                <Property key="FontName" value="SM_TextLabel"/>
+                <Property key="Caption" value="Retro Dogo | ID: 2"/>
+                <Property key="TextAlign" value="Center"/>
+            </Widget>
+            <Widget type="TextBox" skin="TextBox" position_real="0.026315789473684209 0.5 0.94736842105263153 0.40000000000000002" name="extraText 2">
+                <Property key="FontName" value="SM_TextLabel"/>
+                <Property key="Caption" value="Total Time: 5d4h2m52s"/>
+                <Property key="TextAlign" value="Center"/>
+            </Widget>
+        </Widget>
+        <Widget type="Widget" skin="PanelSkin" position_real="0.40512820512820513 0.15945945945945947 0.19487179487179487 0.13513513513513514" name="playerBox 3">
+            <Widget type="TextBox" skin="TextBox" position_real="0.026315789473684209 0.10000000000000001 0.94736842105263153 0.40000000000000002" name="nameText 3">
+                <Property key="FontName" value="SM_TextLabel"/>
+                <Property key="Caption" value="Retro Dogo | ID: 3"/>
+                <Property key="TextAlign" value="Center"/>
+            </Widget>
+            <Widget type="TextBox" skin="TextBox" position_real="0.026315789473684209 0.5 0.94736842105263153 0.40000000000000002" name="extraText 3">
+                <Property key="FontName" value="SM_TextLabel"/>
+                <Property key="Caption" value="Total Time: 5d4h2m52s"/>
+                <Property key="TextAlign" value="Center"/>
+            </Widget>
+        </Widget>
+        <Widget type="Widget" skin="PanelSkin" position_real="0.59999999999999998 0.15945945945945947 0.19487179487179487 0.13513513513513514" name="playerBox 4">
+            <Widget type="TextBox" skin="TextBox" position_real="0.026315789473684209 0.10000000000000001 0.94736842105263153 0.40000000000000002" name="nameText 4">
+                <Property key="FontName" value="SM_TextLabel"/>
+                <Property key="Caption" value="Retro Dogo | ID: 4"/>
+                <Property key="TextAlign" value="Center"/>
+            </Widget>
+            <Widget type="TextBox" skin="TextBox" position_real="0.026315789473684209 0.5 0.94736842105263153 0.40000000000000002" name="extraText 4">
+                <Property key="FontName" value="SM_TextLabel"/>
+                <Property key="Caption" value="Total Time: 5d4h2m52s"/>
+                <Property key="TextAlign" value="Center"/>
+            </Widget>
+        </Widget>
+        <Widget type="Widget" skin="PanelSkin" position_real="0.79487179487179482 0.15945945945945947 0.19487179487179487 0.13513513513513514" name="playerBox 5">
+            <Widget type="TextBox" skin="TextBox" position_real="0.026315789473684209 0.10000000000000001 0.94736842105263153 0.40000000000000002" name="nameText 5">
+                <Property key="FontName" value="SM_TextLabel"/>
+                <Property key="Caption" value="Retro Dogo | ID: 5"/>
+                <Property key="TextAlign" value="Center"/>
+            </Widget>
+            <Widget type="TextBox" skin="TextBox" position_real="0.026315789473684209 0.5 0.94736842105263153 0.40000000000000002" name="extraText 5">
+                <Property key="FontName" value="SM_TextLabel"/>
+                <Property key="Caption" value="Total Time: 5d4h2m52s"/>
+                <Property key="TextAlign" value="Center"/>
+            </Widget>
+        </Widget>
+        <Widget type="Widget" skin="PanelSkin" position_real="0.015384615384615385 0.29729729729729731 0.19487179487179487 0.13513513513513514" name="playerBox 6">
+            <Widget type="TextBox" skin="TextBox" position_real="0.026315789473684209 0.10000000000000001 0.94736842105263153 0.40000000000000002" name="nameText 6">
+                <Property key="FontName" value="SM_TextLabel"/>
+                <Property key="Caption" value="Retro Dogo | ID: 6"/>
+                <Property key="TextAlign" value="Center"/>
+            </Widget>
+            <Widget type="TextBox" skin="TextBox" position_real="0.026315789473684209 0.5 0.94736842105263153 0.40000000000000002" name="extraText 6">
+                <Property key="FontName" value="SM_TextLabel"/>
+                <Property key="Caption" value="Total Time: 5d4h2m52s"/>
+                <Property key="TextAlign" value="Center"/>
+            </Widget>
+        </Widget>
+        <Widget type="Widget" skin="PanelSkin" position_real="0.21025641025641026 0.29729729729729731 0.19487179487179487 0.13513513513513514" name="playerBox 7">
+            <Widget type="TextBox" skin="TextBox" position_real="0.026315789473684209 0.10000000000000001 0.94736842105263153 0.40000000000000002" name="nameText 7">
+                <Property key="FontName" value="SM_TextLabel"/>
+                <Property key="Caption" value="Retro Dogo | ID: 7"/>
+                <Property key="TextAlign" value="Center"/>
+            </Widget>
+            <Widget type="TextBox" skin="TextBox" position_real="0.026315789473684209 0.5 0.94736842105263153 0.40000000000000002" name="extraText 7">
+                <Property key="FontName" value="SM_TextLabel"/>
+                <Property key="Caption" value="Total Time: 5d4h2m52s"/>
+                <Property key="TextAlign" value="Center"/>
+            </Widget>
+        </Widget>
+        <Widget type="Widget" skin="PanelSkin" position_real="0.40512820512820513 0.29729729729729731 0.19487179487179487 0.13513513513513514" name="playerBox 8">
+            <Widget type="TextBox" skin="TextBox" position_real="0.026315789473684209 0.10000000000000001 0.94736842105263153 0.40000000000000002" name="nameText 8">
+                <Property key="FontName" value="SM_TextLabel"/>
+                <Property key="Caption" value="Retro Dogo | ID: 8"/>
+                <Property key="TextAlign" value="Center"/>
+            </Widget>
+            <Widget type="TextBox" skin="TextBox" position_real="0.026315789473684209 0.5 0.94736842105263153 0.40000000000000002" name="extraText 8">
+                <Property key="FontName" value="SM_TextLabel"/>
+                <Property key="Caption" value="Total Time: 5d4h2m52s"/>
+                <Property key="TextAlign" value="Center"/>
+            </Widget>
+        </Widget>
+        <Widget type="Widget" skin="PanelSkin" position_real="0.59999999999999998 0.29729729729729731 0.19487179487179487 0.13513513513513514" name="playerBox 9">
+            <Widget type="TextBox" skin="TextBox" position_real="0.026315789473684209 0.10000000000000001 0.94736842105263153 0.40000000000000002" name="nameText 9">
+                <Property key="FontName" value="SM_TextLabel"/>
+                <Property key="Caption" value="Retro Dogo | ID: 9"/>
+                <Property key="TextAlign" value="Center"/>
+            </Widget>
+            <Widget type="TextBox" skin="TextBox" position_real="0.026315789473684209 0.5 0.94736842105263153 0.40000000000000002" name="extraText 9">
+                <Property key="FontName" value="SM_TextLabel"/>
+                <Property key="Caption" value="Total Time: 5d4h2m52s"/>
+                <Property key="TextAlign" value="Center"/>
+            </Widget>
+        </Widget>
+        <Widget type="Widget" skin="PanelSkin" position_real="0.79487179487179482 0.29729729729729731 0.19487179487179487 0.13513513513513514" name="playerBox 10">
+            <Widget type="TextBox" skin="TextBox" position_real="0.026315789473684209 0.10000000000000001 0.94736842105263153 0.40000000000000002" name="nameText 10">
+                <Property key="FontName" value="SM_TextLabel"/>
+                <Property key="Caption" value="Retro Dogo | ID: 10"/>
+                <Property key="TextAlign" value="Center"/>
+            </Widget>
+            <Widget type="TextBox" skin="TextBox" position_real="0.026315789473684209 0.5 0.94736842105263153 0.40000000000000002" name="extraText 10">
+                <Property key="FontName" value="SM_TextLabel"/>
+                <Property key="Caption" value="Total Time: 5d4h2m52s"/>
+                <Property key="TextAlign" value="Center"/>
+            </Widget>
+        </Widget>
+        <Widget type="Widget" skin="PanelSkin" position_real="0.015384615384615385 0.43243243243243246 0.19487179487179487 0.13513513513513514" name="playerBox 11">
+            <Widget type="TextBox" skin="TextBox" position_real="0.026315789473684209 0.10000000000000001 0.94736842105263153 0.40000000000000002" name="nameText 11">
+                <Property key="FontName" value="SM_TextLabel"/>
+                <Property key="Caption" value="Retro Dogo | ID: 11"/>
+                <Property key="TextAlign" value="Center"/>
+            </Widget>
+            <Widget type="TextBox" skin="TextBox" position_real="0.026315789473684209 0.5 0.94736842105263153 0.40000000000000002" name="extraText 11">
+                <Property key="FontName" value="SM_TextLabel"/>
+                <Property key="Caption" value="Total Time: 5d4h2m52s"/>
+                <Property key="TextAlign" value="Center"/>
+            </Widget>
+        </Widget>
+        <Widget type="Widget" skin="PanelSkin" position_real="0.21025641025641026 0.43243243243243246 0.19487179487179487 0.13513513513513514" name="playerBox 12">
+            <Widget type="TextBox" skin="TextBox" position_real="0.026315789473684209 0.10000000000000001 0.94736842105263153 0.40000000000000002" name="nameText 12">
+                <Property key="FontName" value="SM_TextLabel"/>
+                <Property key="Caption" value="Retro Dogo | ID: 12"/>
+                <Property key="TextAlign" value="Center"/>
+            </Widget>
+            <Widget type="TextBox" skin="TextBox" position_real="0.026315789473684209 0.5 0.94736842105263153 0.40000000000000002" name="extraText 12">
+                <Property key="FontName" value="SM_TextLabel"/>
+                <Property key="Caption" value="Total Time: 5d4h2m52s"/>
+                <Property key="TextAlign" value="Center"/>
+            </Widget>
+        </Widget>
+        <Widget type="Widget" skin="PanelSkin" position_real="0.40512820512820513 0.43243243243243246 0.19487179487179487 0.13513513513513514" name="playerBox 13">
+            <Widget type="TextBox" skin="TextBox" position_real="0.026315789473684209 0.10000000000000001 0.94736842105263153 0.40000000000000002" name="nameText 13">
+                <Property key="FontName" value="SM_TextLabel"/>
+                <Property key="Caption" value="Retro Dogo | ID: 13"/>
+                <Property key="TextAlign" value="Center"/>
+            </Widget>
+            <Widget type="TextBox" skin="TextBox" position_real="0.026315789473684209 0.5 0.94736842105263153 0.40000000000000002" name="extraText 13">
+                <Property key="FontName" value="SM_TextLabel"/>
+                <Property key="Caption" value="Total Time: 5d4h2m52s"/>
+                <Property key="TextAlign" value="Center"/>
+            </Widget>
+        </Widget>
+        <Widget type="Widget" skin="PanelSkin" position_real="0.59999999999999998 0.43243243243243246 0.19487179487179487 0.13513513513513514" name="playerBox 14">
+            <Widget type="TextBox" skin="TextBox" position_real="0.026315789473684209 0.10000000000000001 0.94736842105263153 0.40000000000000002" name="nameText 14">
+                <Property key="FontName" value="SM_TextLabel"/>
+                <Property key="Caption" value="Retro Dogo | ID: 14"/>
+                <Property key="TextAlign" value="Center"/>
+            </Widget>
+            <Widget type="TextBox" skin="TextBox" position_real="0.026315789473684209 0.5 0.94736842105263153 0.40000000000000002" name="extraText 14">
+                <Property key="FontName" value="SM_TextLabel"/>
+                <Property key="Caption" value="Total Time: 5d4h2m52s"/>
+                <Property key="TextAlign" value="Center"/>
+            </Widget>
+        </Widget>
+        <Widget type="Widget" skin="PanelSkin" position_real="0.79487179487179482 0.43243243243243246 0.19487179487179487 0.13513513513513514" name="playerBox 15">
+            <Widget type="TextBox" skin="TextBox" position_real="0.026315789473684209 0.10000000000000001 0.94736842105263153 0.40000000000000002" name="nameText 15">
+                <Property key="FontName" value="SM_TextLabel"/>
+                <Property key="Caption" value="Retro Dogo | ID: 15"/>
+                <Property key="TextAlign" value="Center"/>
+            </Widget>
+            <Widget type="TextBox" skin="TextBox" position_real="0.026315789473684209 0.5 0.94736842105263153 0.40000000000000002" name="extraText 15">
+                <Property key="FontName" value="SM_TextLabel"/>
+                <Property key="Caption" value="Total Time: 5d4h2m52s"/>
+                <Property key="TextAlign" value="Center"/>
+            </Widget>
+        </Widget>
+        <Widget type="Widget" skin="PanelSkin" position_real="0.015384615384615385 0.56486486486486487 0.19487179487179487 0.13513513513513514" name="playerBox 16">
+            <Widget type="TextBox" skin="TextBox" position_real="0.026315789473684209 0.10000000000000001 0.94736842105263153 0.40000000000000002" name="nameText 16">
+                <Property key="FontName" value="SM_TextLabel"/>
+                <Property key="Caption" value="Retro Dogo | ID: 16"/>
+                <Property key="TextAlign" value="Center"/>
+            </Widget>
+            <Widget type="TextBox" skin="TextBox" position_real="0.026315789473684209 0.5 0.94736842105263153 0.40000000000000002" name="extraText 16">
+                <Property key="FontName" value="SM_TextLabel"/>
+                <Property key="Caption" value="Total Time: 5d4h2m52s"/>
+                <Property key="TextAlign" value="Center"/>
+            </Widget>
+        </Widget>
+        <Widget type="Widget" skin="PanelSkin" position_real="0.21025641025641026 0.56486486486486487 0.19487179487179487 0.13513513513513514" name="playerBox 17">
+            <Widget type="TextBox" skin="TextBox" position_real="0.026315789473684209 0.10000000000000001 0.94736842105263153 0.40000000000000002" name="nameText 17">
+                <Property key="FontName" value="SM_TextLabel"/>
+                <Property key="Caption" value="Retro Dogo | ID: 17"/>
+                <Property key="TextAlign" value="Center"/>
+            </Widget>
+            <Widget type="TextBox" skin="TextBox" position_real="0.026315789473684209 0.5 0.94736842105263153 0.40000000000000002" name="extraText 17">
+                <Property key="FontName" value="SM_TextLabel"/>
+                <Property key="Caption" value="Total Time: 5d4h2m52s"/>
+                <Property key="TextAlign" value="Center"/>
+            </Widget>
+        </Widget>
+        <Widget type="Widget" skin="PanelSkin" position_real="0.40512820512820513 0.56486486486486487 0.19487179487179487 0.13513513513513514" name="playerBox 18">
+            <Widget type="TextBox" skin="TextBox" position_real="0.026315789473684209 0.10000000000000001 0.94736842105263153 0.40000000000000002" name="nameText 18">
+                <Property key="FontName" value="SM_TextLabel"/>
+                <Property key="Caption" value="Retro Dogo | ID: 18"/>
+                <Property key="TextAlign" value="Center"/>
+            </Widget>
+            <Widget type="TextBox" skin="TextBox" position_real="0.026315789473684209 0.5 0.94736842105263153 0.40000000000000002" name="extraText 18">
+                <Property key="FontName" value="SM_TextLabel"/>
+                <Property key="Caption" value="Total Time: 5d4h2m52s"/>
+                <Property key="TextAlign" value="Center"/>
+            </Widget>
+        </Widget>
+        <Widget type="Widget" skin="PanelSkin" position_real="0.59999999999999998 0.56486486486486487 0.19487179487179487 0.13513513513513514" name="playerBox 19">
+            <Widget type="TextBox" skin="TextBox" position_real="0.026315789473684209 0.10000000000000001 0.94736842105263153 0.40000000000000002" name="nameText 19">
+                <Property key="FontName" value="SM_TextLabel"/>
+                <Property key="Caption" value="Retro Dogo | ID: 19"/>
+                <Property key="TextAlign" value="Center"/>
+            </Widget>
+            <Widget type="TextBox" skin="TextBox" position_real="0.026315789473684209 0.5 0.94736842105263153 0.40000000000000002" name="extraText 19">
+                <Property key="FontName" value="SM_TextLabel"/>
+                <Property key="Caption" value="Total Time: 5d4h2m52s"/>
+                <Property key="TextAlign" value="Center"/>
+            </Widget>
+        </Widget>
+        <Widget type="Widget" skin="PanelSkin" position_real="0.79487179487179482 0.56486486486486487 0.19487179487179487 0.13513513513513514" name="playerBox 20">
+            <Widget type="TextBox" skin="TextBox" position_real="0.026315789473684209 0.10000000000000001 0.94736842105263153 0.40000000000000002" name="nameText 20">
+                <Property key="FontName" value="SM_TextLabel"/>
+                <Property key="Caption" value="Retro Dogo | ID: 20"/>
+                <Property key="TextAlign" value="Center"/>
+            </Widget>
+            <Widget type="TextBox" skin="TextBox" position_real="0.026315789473684209 0.5 0.94736842105263153 0.40000000000000002" name="extraText 20">
+                <Property key="FontName" value="SM_TextLabel"/>
+                <Property key="Caption" value="Total Time: 5d4h2m52s"/>
+                <Property key="TextAlign" value="Center"/>
+            </Widget>
+        </Widget>
+        <Widget type="Widget" skin="PanelSkin" position_real="0.015384615384615385 0.70270270270270274 0.19487179487179487 0.13513513513513514" name="playerBox 21">
+            <Widget type="TextBox" skin="TextBox" position_real="0.026315789473684209 0.10000000000000001 0.94736842105263153 0.40000000000000002" name="nameText 21">
+                <Property key="FontName" value="SM_TextLabel"/>
+                <Property key="Caption" value="Retro Dogo | ID: 21"/>
+                <Property key="TextAlign" value="Center"/>
+            </Widget>
+            <Widget type="TextBox" skin="TextBox" position_real="0.026315789473684209 0.5 0.94736842105263153 0.40000000000000002" name="extraText 21">
+                <Property key="FontName" value="SM_TextLabel"/>
+                <Property key="Caption" value="Total Time: 5d4h2m52s"/>
+                <Property key="TextAlign" value="Center"/>
+            </Widget>
+        </Widget>
+        <Widget type="Widget" skin="PanelSkin" position_real="0.21025641025641026 0.70270270270270274 0.19487179487179487 0.13513513513513514" name="playerBox 22">
+            <Widget type="TextBox" skin="TextBox" position_real="0.026315789473684209 0.10000000000000001 0.94736842105263153 0.40000000000000002" name="nameText 22">
+                <Property key="FontName" value="SM_TextLabel"/>
+                <Property key="Caption" value="Retro Dogo | ID: 22"/>
+                <Property key="TextAlign" value="Center"/>
+            </Widget>
+            <Widget type="TextBox" skin="TextBox" position_real="0.026315789473684209 0.5 0.94736842105263153 0.40000000000000002" name="extraText 22">
+                <Property key="FontName" value="SM_TextLabel"/>
+                <Property key="Caption" value="Total Time: 5d4h2m52s"/>
+                <Property key="TextAlign" value="Center"/>
+            </Widget>
+        </Widget>
+        <Widget type="Widget" skin="PanelSkin" position_real="0.40512820512820513 0.70270270270270274 0.19487179487179487 0.13513513513513514" name="playerBox 23">
+            <Widget type="TextBox" skin="TextBox" position_real="0.026315789473684209 0.10000000000000001 0.94736842105263153 0.40000000000000002" name="nameText 23">
+                <Property key="FontName" value="SM_TextLabel"/>
+                <Property key="Caption" value="Retro Dogo | ID: 23"/>
+                <Property key="TextAlign" value="Center"/>
+            </Widget>
+            <Widget type="TextBox" skin="TextBox" position_real="0.026315789473684209 0.5 0.94736842105263153 0.40000000000000002" name="extraText 23">
+                <Property key="FontName" value="SM_TextLabel"/>
+                <Property key="Caption" value="Total Time: 5d4h2m52s"/>
+                <Property key="TextAlign" value="Center"/>
+            </Widget>
+        </Widget>
+        <Widget type="Widget" skin="PanelSkin" position_real="0.59999999999999998 0.70270270270270274 0.19487179487179487 0.13513513513513514" name="playerBox 24">
+            <Widget type="TextBox" skin="TextBox" position_real="0.026315789473684209 0.10000000000000001 0.94736842105263153 0.40000000000000002" name="nameText 24">
+                <Property key="FontName" value="SM_TextLabel"/>
+                <Property key="Caption" value="Retro Dogo | ID: 24"/>
+                <Property key="TextAlign" value="Center"/>
+            </Widget>
+            <Widget type="TextBox" skin="TextBox" position_real="0.026315789473684209 0.5 0.94736842105263153 0.40000000000000002" name="extraText 24">
+                <Property key="FontName" value="SM_TextLabel"/>
+                <Property key="Caption" value="Total Time: 5d4h2m52s"/>
+                <Property key="TextAlign" value="Center"/>
+            </Widget>
+        </Widget>
+        <Widget type="Widget" skin="PanelSkin" position_real="0.79487179487179482 0.70270270270270274 0.19487179487179487 0.13513513513513514" name="playerBox 25">
+            <Widget type="TextBox" skin="TextBox" position_real="0.026315789473684209 0.10000000000000001 0.94736842105263153 0.40000000000000002" name="nameText 25">
+                <Property key="FontName" value="SM_TextLabel"/>
+                <Property key="Caption" value="Retro Dogo | ID: 25"/>
+                <Property key="TextAlign" value="Center"/>
+            </Widget>
+            <Widget type="TextBox" skin="TextBox" position_real="0.026315789473684209 0.5 0.94736842105263153 0.40000000000000002" name="extraText 25">
+                <Property key="FontName" value="SM_TextLabel"/>
+                <Property key="Caption" value="Total Time: 5d4h2m52s"/>
+                <Property key="TextAlign" value="Center"/>
+            </Widget>
+        </Widget>
+        <Widget type="Widget" skin="PanelSkin" position_real="0.015384615384615385 0.83513513513513515 0.19487179487179487 0.13513513513513514" name="playerBox 26">
+            <Widget type="TextBox" skin="TextBox" position_real="0.026315789473684209 0.10000000000000001 0.94736842105263153 0.40000000000000002" name="nameText 26">
+                <Property key="FontName" value="SM_TextLabel"/>
+                <Property key="Caption" value="Retro Dogo | ID: 26"/>
+                <Property key="TextAlign" value="Center"/>
+            </Widget>
+            <Widget type="TextBox" skin="TextBox" position_real="0.026315789473684209 0.5 0.94736842105263153 0.40000000000000002" name="extraText 26">
+                <Property key="FontName" value="SM_TextLabel"/>
+                <Property key="Caption" value="Total Time: 5d4h2m52s"/>
+                <Property key="TextAlign" value="Center"/>
+            </Widget>
+        </Widget>
+        <Widget type="Widget" skin="PanelSkin" position_real="0.21025641025641026 0.83513513513513515 0.19487179487179487 0.13513513513513514" name="playerBox 27">
+            <Widget type="TextBox" skin="TextBox" position_real="0.026315789473684209 0.10000000000000001 0.94736842105263153 0.40000000000000002" name="nameText 27">
+                <Property key="FontName" value="SM_TextLabel"/>
+                <Property key="Caption" value="Retro Dogo | ID: 27"/>
+                <Property key="TextAlign" value="Center"/>
+            </Widget>
+            <Widget type="TextBox" skin="TextBox" position_real="0.026315789473684209 0.5 0.94736842105263153 0.40000000000000002" name="extraText 27">
+                <Property key="FontName" value="SM_TextLabel"/>
+                <Property key="Caption" value="Total Time: 5d4h2m52s"/>
+                <Property key="TextAlign" value="Center"/>
+            </Widget>
+        </Widget>
+        <Widget type="Widget" skin="PanelSkin" position_real="0.40512820512820513 0.83513513513513515 0.19487179487179487 0.13513513513513514" name="playerBox 28">
+            <Widget type="TextBox" skin="TextBox" position_real="0.026315789473684209 0.10000000000000001 0.94736842105263153 0.40000000000000002" name="nameText 28">
+                <Property key="FontName" value="SM_TextLabel"/>
+                <Property key="Caption" value="Retro Dogo | ID: 28"/>
+                <Property key="TextAlign" value="Center"/>
+            </Widget>
+            <Widget type="TextBox" skin="TextBox" position_real="0.026315789473684209 0.5 0.94736842105263153 0.40000000000000002" name="extraText 28">
+                <Property key="FontName" value="SM_TextLabel"/>
+                <Property key="Caption" value="Total Time: 5d4h2m52s"/>
+                <Property key="TextAlign" value="Center"/>
+            </Widget>
+        </Widget>
+        <Widget type="Widget" skin="PanelSkin" position_real="0.59999999999999998 0.83513513513513515 0.19487179487179487 0.13513513513513514" name="playerBox 29">
+            <Widget type="TextBox" skin="TextBox" position_real="0.026315789473684209 0.10000000000000001 0.94736842105263153 0.40000000000000002" name="nameText 29">
+                <Property key="FontName" value="SM_TextLabel"/>
+                <Property key="Caption" value="Retro Dogo | ID: 29"/>
+                <Property key="TextAlign" value="Center"/>
+            </Widget>
+            <Widget type="TextBox" skin="TextBox" position_real="0.026315789473684209 0.5 0.94736842105263153 0.40000000000000002" name="extraText 29">
+                <Property key="FontName" value="SM_TextLabel"/>
+                <Property key="Caption" value="Total Time: 5d4h2m52s"/>
+                <Property key="TextAlign" value="Center"/>
+            </Widget>
+        </Widget>
+        <Widget type="Widget" skin="PanelSkin" position_real="0.79487179487179482 0.83513513513513515 0.19487179487179487 0.13513513513513514" name="playerBox 30">
+            <Widget type="TextBox" skin="TextBox" position_real="0.026315789473684209 0.10000000000000001 0.94736842105263153 0.40000000000000002" name="nameText 30">
+                <Property key="FontName" value="SM_TextLabel"/>
+                <Property key="Caption" value="Retro Dogo | ID: 30"/>
+                <Property key="TextAlign" value="Center"/>
+            </Widget>
+            <Widget type="TextBox" skin="TextBox" position_real="0.026315789473684209 0.5 0.94736842105263153 0.40000000000000002" name="extraText 30">
+                <Property key="FontName" value="SM_TextLabel"/>
+                <Property key="Caption" value="Total Time: 5d4h2m52s"/>
+                <Property key="TextAlign" value="Center"/>
+            </Widget>
+        </Widget>
+        <Widget type="Widget" skin="PanelSkin" position_real="0.015384615384615385 0.027027027027027029 0.97435897435897434 0.13513513513513514">
+            <Widget type="TextBox" skin="TextBox" position_real="0.005263157894736842 0.10000000000000001 0.18947368421052632 0.40000000000000002" name="topTextBox 1">
+                <Property key="FontName" value="SM_TextLabel"/>
+                <Property key="TextAlign" value="Center"/>
+            </Widget>
+            <Widget type="TextBox" skin="TextBox" position_real="0.005263157894736842 0.5 0.18947368421052632 0.40000000000000002" name="topTextBox 6">
+                <Property key="FontName" value="SM_TextLabel"/>
+                <Property key="TextAlign" value="Center"/>
+            </Widget>
+            <Widget type="TextBox" skin="TextBox" position_real="0.20526315789473684 0.10000000000000001 0.18947368421052632 0.40000000000000002" name="topTextBox 2">
+                <Property key="FontName" value="SM_TextLabel"/>
+                <Property key="TextAlign" value="Center"/>
+            </Widget>
+            <Widget type="TextBox" skin="TextBox" position_real="0.20526315789473684 0.5 0.18947368421052632 0.40000000000000002" name="topTextBox 7">
+                <Property key="FontName" value="SM_TextLabel"/>
+                <Property key="TextAlign" value="Center"/>
+            </Widget>
+            <Widget type="TextBox" skin="TextBox" position_real="0.40526315789473683 0.10000000000000001 0.18947368421052632 0.40000000000000002" name="topTextBox 3">
+                <Property key="FontName" value="SM_TextLabel"/>
+                <Property key="TextAlign" value="Center"/>
+            </Widget>
+            <Widget type="TextBox" skin="TextBox" position_real="0.40526315789473683 0.5 0.18947368421052632 0.40000000000000002" name="topTextBox 8">
+                <Property key="FontName" value="SM_TextLabel"/>
+                <Property key="TextAlign" value="Center"/>
+            </Widget>
+            <Widget type="TextBox" skin="TextBox" position_real="0.60526315789473684 0.10000000000000001 0.18947368421052632 0.40000000000000002" name="topTextBox 4">
+                <Property key="FontName" value="SM_TextLabel"/>
+                <Property key="TextAlign" value="Center"/>
+            </Widget>
+            <Widget type="TextBox" skin="TextBox" position_real="0.60526315789473684 0.5 0.18947368421052632 0.40000000000000002" name="topTextBox 9">
+                <Property key="FontName" value="SM_TextLabel"/>
+                <Property key="TextAlign" value="Center"/>
+            </Widget>
+            <Widget type="TextBox" skin="TextBox" position_real="0.80526315789473679 0.10000000000000001 0.18947368421052632 0.40000000000000002" name="topTextBox 5">
+                <Property key="FontName" value="SM_TextLabel"/>
+                <Property key="TextAlign" value="Center"/>
+            </Widget>
+            <Widget type="TextBox" skin="TextBox" position_real="0.80526315789473679 0.5 0.18947368421052632 0.40000000000000002" name="topTextBox 10">
+                <Property key="FontName" value="SM_TextLabel"/>
+                <Property key="TextAlign" value="Center"/>
+            </Widget>
+        </Widget>
+    </Widget>
+    <CodeGeneratorSettings/>
+</MyGUI>

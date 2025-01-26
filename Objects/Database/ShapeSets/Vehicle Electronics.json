@@ -1,0 +1,95 @@
+{
+   "partList" : [
+      {
+         "box" : {
+            "x" : 1,
+            "y" : 1,
+            "z" : 1
+         },
+         "color" : "888888",
+         "name" : "main_vehicle_electronic",
+         "physicsMaterial" : "Default",
+         "renderable" : "$CONTENT_DATA/Objects/Renderables/VehicleElectronics/VehicleElectronic.rend",
+         "rotationSet" : "PropY",
+         "scripted" : {
+            "classname" : "VE",
+            "filename" : "$CONTENT_DATA/Scripts/VehicleElectronics/VehicleElectronic.lua"
+         },
+         "uuid" : "955f789f-aadb-40b2-a54f-d4ae9d025c14"
+      },
+      {
+         "box" : {
+            "x" : 1,
+            "y" : 1,
+            "z" : 1
+         },
+         "color" : "d02525",
+         "name" : "break_output",
+         "physicsMaterial" : "Default",
+         "renderable" : "$GAME_DATA/Objects/Renderable/Interactive/obj_interactive_logicgate.rend",
+         "rotationSet" : "PropY",
+         "scripted" : {
+            "classname" : "output",
+            "filename" : "$CONTENT_DATA/Scripts/VehicleElectronics/Output.lua"
+         },
+         "uuid" : "93d69339-eee8-48b6-8ef8-dfe77deb985e"
+      },
+      {
+         "box" : {
+            "x" : 1,
+            "y" : 1,
+            "z" : 1
+         },
+         "color" : "eeeeee",
+         "name" : "reverse_output",
+         "physicsMaterial" : "Default",
+         "renderable" : "$GAME_DATA/Objects/Renderable/Interactive/obj_interactive_logicgate.rend",
+         "rotationSet" : "PropY",
+         "scripted" : {
+            "classname" : "output",
+            "filename" : "$CONTENT_DATA/Scripts/VehicleElectronics/Output.lua"
+         },
+         "uuid" : "d16a0218-db1e-4475-b2ac-15aecbf53253"
+      },
+      {
+         "box" : {
+            "x" : 1,
+            "y" : 1,
+            "z" : 1
+         },
+         "color" : "df7f00",
+         "name" : "left_blinking_output",
+         "physicsMaterial" : "Default",
+         "renderable" : "$CONTENT_DATA/Objects/Renderables/VehicleElectronics/LeftLight.rend",
+         "rotationSet" : "PropY",
+         "scripted" : {
+            "classname" : "blinker",
+            "data" : {
+               "type" : "left"
+            },
+            "filename" : "$CONTENT_DATA/Scripts/VehicleElectronics/Blinker.lua"
+         },
+         "uuid" : "440f3f05-4258-489a-aafe-9fc6057e17ae"
+      },
+      {
+         "box" : {
+            "x" : 1,
+            "y" : 1,
+            "z" : 1
+         },
+         "color" : "df7f00",
+         "name" : "right_blinking_light",
+         "physicsMaterial" : "Default",
+         "renderable" : "$CONTENT_DATA/Objects/Renderables/VehicleElectronics/RightLight.rend",
+         "rotationSet" : "PropY",
+         "scripted" : {
+            "classname" : "blinker",
+            "data" : {
+               "type" : "right"
+            },
+            "filename" : "$CONTENT_DATA/Scripts/VehicleElectronics/Blinker.lua"
+         },
+         "uuid" : "6681ce73-ce3d-4af0-a51c-0390b1dd501c"
+      }
+   ]
+}

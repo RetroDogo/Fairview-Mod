@@ -1,0 +1,49 @@
+{
+   "toolList" : [
+      {
+         "autoTool" : true,
+         "name" : "commands",
+         "previewRenderable" : "$GAME_DATA/Character/Char_Tools/char_spudgun_preview.rend",
+         "script" : {
+            "class" : "commands",
+            "data" : {},
+            "file" : "$CONTENT_DATA/Scripts/Commands.lua"
+         },
+         "showInInventory" : false,
+         "uuid" : "19189527-dec5-4db2-b7d9-0debd2da4e0b"
+      },
+      {
+         "name" : "taser",
+         "previewRenderable" : "$GAME_DATA/Character/Char_Tools/char_spudgun_preview.rend",
+         "previewRotation" : [ 1, 0, 0, 0, 0, -1, 0, 1, 0 ],
+         "script" : {
+            "class" : "taser",
+            "data" : {},
+            "file" : "$MOD_DATA/Scripts/Taser.lua"
+         },
+         "uuid" : "12485df8-90c9-4e6c-843f-162c5cb109f3"
+      },
+      {
+         "name" : "handcuffs",
+         "previewRenderable" : "$CONTENT_DATA/Objects/Renderables/handcuffsPreview.rend",
+         "previewRotation" : [ 1, 0, 0, 0, 0, -1, 0, 1, 0 ],
+         "script" : {
+            "class" : "HC",
+            "data" : {},
+            "file" : "$MOD_DATA/Scripts/Handcuffs.lua"
+         },
+         "uuid" : "db04dd40-6b99-4321-80c1-463064d11209"
+      },
+      {
+         "name" : "hands",
+         "previewRenderable" : "$CONTENT_DATA/Objects/Renderables/Hands.rend",
+         "previewRotation" : [ 1, 0, 0, 0, 0, -1, 0, 1, 0 ],
+         "script" : {
+            "class" : "hands",
+            "data" : {},
+            "file" : "$MOD_DATA/Scripts/Hands.lua"
+         },
+         "uuid" : "af89c0c4-d2bb-44dd-8300-caf29beb364c"
+      }
+   ]
+}

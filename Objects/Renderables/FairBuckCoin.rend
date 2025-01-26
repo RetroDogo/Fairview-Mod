@@ -1,0 +1,17 @@
+{
+   "lodList" : [
+      {
+         "mesh" : "$CONTENT_DATA/Objects/Mesh/coin.obj",
+         "subMeshList" : [
+            {
+               "material" : "DifAsgNor",
+               "textureList" : [
+                  "$CONTENT_DATA/Objects/Textures/dirtyDIF.png",
+                  "$CONTENT_DATA/Objects/Textures/nothing.png",
+                  "$CONTENT_DATA/Objects/Textures/ATM_nor.png"
+               ]
+            }
+         ]
+      }
+   ]
+}

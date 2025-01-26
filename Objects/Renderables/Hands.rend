@@ -1,0 +1,17 @@
+{
+   "lodList" : [
+      {
+         "mesh" : "$CONTENT_DATA/Objects/Mesh/hands.obj",
+         "subMeshList" : [
+            {
+               "material" : "DifAsgNor",
+               "textureList" : [
+                  "$CONTENT_DATA/Objects/Textures/hand_dif.png",
+                  "$CONTENT_DATA/Objects/Textures/nothing.png",
+                  "$CONTENT_DATA/Objects/Textures/ATM_nor.png"
+               ]
+            }
+         ]
+      }
+   ]
+}

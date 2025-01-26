@@ -1,0 +1,30 @@
+
+{
+	"FurryFemboys" : 
+	{
+		"owner" : "1",
+		"players" : [ "1", "5" ],
+		"settings" : 
+		{
+			"teamColor" : "#ac1be2"
+		}
+	},
+	"fmbys" : 
+	{
+		"owner" : "4",
+		"players" : [ "4" ],
+		"settings" : 
+		{
+			"teamColor" : "#b969ff"
+		}
+	},
+	"tempTeam" : 
+	{
+		"owner" : "sigmaman",
+		"players" : [ "sigmaman" ],
+		"settings" : 
+		{
+			"teamColor" : "#FFFFFF"
+		}
+	}
+}

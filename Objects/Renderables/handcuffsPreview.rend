@@ -1,0 +1,17 @@
+{
+   "lodList" : [
+      {
+         "mesh" : "$CONTENT_DATA/Objects/Mesh/handcuffs.obj",
+         "subMeshList" : [
+            {
+               "material" : "DifAsgNor",
+               "textureList" : [
+                  "$CONTENT_DATA/Objects/Textures/handcuffs_dif.jpg",
+                  "$CONTENT_DATA/Objects/Textures/nothing.png",
+                  "$CONTENT_DATA/Objects/Textures/handcuffs_nor.jpg"
+               ]
+            }
+         ]
+      }
+   ]
+}

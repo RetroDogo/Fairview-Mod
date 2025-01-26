@@ -1,0 +1,291 @@
+{
+	"partList": [
+		{
+			"uuid": "ca003562-fde7-463c-969e-f8334ae54387",
+			"name": "obj_interactive_toilet",
+			"legacyId": 114,
+			"renderable": "$GAME_DATA/Objects/Renderable/Interactive/obj_interactive_toilet.rend",
+			"color": "3e9ffe",
+			"hull": {
+				"x": 3,
+				"y": 4,
+				"z": 3,
+				"col": "$GAME_DATA/Objects/Collision/obj_interactive_toilet.obj"
+			},
+			"seat": {
+				"bones": [
+					{
+						"name": "Hips",
+						"offset": {
+							"x": 0.0,
+							"y": 0.55,
+							"z": 0.9
+						}
+					},
+					{
+						"name": "LeftForeArm",
+						"offset": {
+							"x": 1.0,
+							"y": 0.5,
+							"z": 1.5
+						},
+						"freeRotation": true
+					},
+					{
+						"name": "RightForeArm",
+						"offset": {
+							"x": -1.0,
+							"y": 0.5,
+							"z": 1.5
+						},
+						"freeRotation": true
+					}
+				],
+				"ragdollFile": "$GAME_DATA/Character/seat_ragdoll.json",
+				"enterAudio": "Toilet seated",
+				"exitAudio": "Toilet unseated"
+			},
+			"rotationSet": "PropY",
+			"sticky": "-Y",
+			"physicsMaterial": "Mechanical",
+			"ratings": {
+				"density": 2,
+				"durability": 3,
+				"friction": 3,
+				"buoyancy": 4
+			},
+			"flammable": false,
+			"stackSize": 256
+		},
+		{
+			"uuid": "7cf717d7-d167-4f2d-a6e7-6b2c70aa3986",
+			"name": "obj_interactive_switch",
+			"legacyId": 109,
+			"renderable": "$GAME_DATA/Objects/Renderable/Interactive/obj_interactive_switch.rend",
+			"color": "df7f01",
+			"hull": {
+				"x": 1,
+				"y": 1,
+				"z": 1,
+				"col": "$GAME_DATA/Objects/Collision/obj_interactive_switch.obj"
+			},
+			"lever": {},
+			"rotationSet": "PropY",
+			"sticky": "-Y",
+			"physicsMaterial": "Mechanical",
+			"ratings": {
+				"density": 2,
+				"durability": 3,
+				"friction": 5,
+				"buoyancy": 2
+			},
+			"flammable": true,
+			"stackSize": 256
+		},
+		{
+			"uuid": "1e8d93a4-506b-470d-9ada-9c0a321e2db5",
+			"name": "obj_interactive_button",
+			"legacyId": 110,
+			"renderable": "$GAME_DATA/Objects/Renderable/Interactive/obj_interactive_button.rend",
+			"color": "df7f01",
+			"hull": {
+				"x": 1,
+				"y": 1,
+				"z": 1,
+				"col": "$GAME_DATA/Objects/Collision/obj_interactive_button.obj"
+			},
+			"button": {},
+			"rotationSet": "PropY",
+			"sticky": "-Y",
+			"physicsMaterial": "Mechanical",
+			"ratings": {
+				"density": 2,
+				"durability": 3,
+				"friction": 5,
+				"buoyancy": 2
+			},
+			"flammable": true,
+			"stackSize": 256
+		},
+		{
+			"uuid": "dfefc9d7-db03-4d25-ad85-eae1d824d8c0",
+			"name": "obj_interactive_radio",
+			"legacyId": 112,
+			"renderable": "$GAME_DATA/Objects/Renderable/Interactive/obj_interactive_radio.rend",
+			"color": "df7f01",
+			"box": {
+				"x": 2,
+				"y": 2,
+				"z": 1
+			},
+			"radio": {},
+			"rotationSet": "PropYZ",
+			"physicsMaterial": "Mechanical",
+			"ratings": {
+				"density": 2,
+				"durability": 3,
+				"friction": 5,
+				"buoyancy": 6
+			},
+			"flammable": true,
+			"stackSize": 256
+		},
+		{
+			"uuid": "818f4e15-ff51-4fed-b874-723a25d62e1c",
+			"name": "obj_interactive_horn",
+			"legacyId": 113,
+			"renderable": "$GAME_DATA/Objects/Renderable/Interactive/obj_interactive_horn.rend",
+			"color": "df7f01",
+			"hull": {
+				"x": 1,
+				"y": 1,
+				"z": 1,
+				"col": "$GAME_DATA/Objects/Collision/obj_interactive_horn.obj"
+			},
+			"rotationSet": "PropY",
+			"sticky": "-Y",
+			"physicsMaterial": "Mechanical",
+			"ratings": {
+				"density": 2,
+				"durability": 2,
+				"friction": 5,
+				"buoyancy": 5
+			},
+			"scripted": {
+				"filename": "$SURVIVAL_DATA/Scripts/game/interactables/Horn.lua",
+				"classname": "Horn"
+			},
+			"flammable": true,
+			"stackSize": 256
+		},
+		{
+			"uuid": "9f0f56e8-2c31-4d83-996c-d00a9b296c3f",
+			"name": "obj_interactive_logicgate",
+			"legacyId": 119,
+			"renderable": "$GAME_DATA/Objects/Renderable/Interactive/obj_interactive_logicgate.rend",
+			"color": "df7f01",
+			"box": {
+				"x": 1,
+				"y": 1,
+				"z": 1
+			},
+			"logic": {},
+			"rotationSet": "PropYZ",
+			"physicsMaterial": "Mechanical",
+			"ratings": {
+				"density": 2,
+				"durability": 3,
+				"friction": 5,
+				"buoyancy": 2
+			},
+			"flammable": false,
+			"stackSize": 256
+		},
+		{
+			"uuid": "8f7fd0e7-c46e-4944-a414-7ce2437bb30f",
+			"name": "obj_interactive_timer",
+			"renderable": "$GAME_DATA/Objects/Renderable/Interactive/obj_interactive_timer.rend",
+			"color": "df7f01",
+			"box": {
+				"x": 1,
+				"y": 2,
+				"z": 1
+			},
+			"timer": {},
+			"rotationSet": "PropYmmNegYmmZ",
+			"physicsMaterial": "Mechanical",
+			"ratings": {
+				"density": 2,
+				"durability": 3,
+				"friction": 5,
+				"buoyancy": 4
+			},
+			"flammable": false,
+			"stackSize": 256
+		},
+		{
+			"uuid": "3efe715f-8745-475f-a609-5e7cbe09a8ef",
+			"name": "obj_interactive_bathtub",
+			"renderable": "$GAME_DATA/Objects/Renderable/Interactive/obj_interactive_bathtub.rend",
+			"color": "3e9ffe",
+			"hull": {
+				"x": 4,
+				"y": 3,
+				"z": 7,
+				"col": "$GAME_DATA/Objects/Collision/obj_interactive_bathtub.obj"
+			},
+			"seat": {
+				"bones": [
+					{
+						"name": "Hips",
+						"offset": {
+							"x": 0.0,
+							"y": 0.4,
+							"z": -1.5
+						}
+					},
+					{
+						"name": "LeftForeArm",
+						"offset": {
+							"x": 1.7,
+							"y": 1.3,
+							"z": -0.5
+						},
+						"freeRotation": true
+					},
+					{
+						"name": "RightForeArm",
+						"offset": {
+							"x": -1.7,
+							"y": 1.3,
+							"z": -0.5
+						},
+						"freeRotation": true
+					}
+				],
+				"ragdollFile": "$GAME_DATA/Character/bath_ragdoll.json",
+				"enterAudio": "Seat seated",
+				"exitAudio": "Seat unseated",
+				"effect": "BubbleBath"
+			},
+			"rotationSet": "PropY",
+			"sticky": "-Y-Z+Z-X+X",
+			"physicsMaterial": "Mechanical",
+			"ratings": {
+				"density": 4,
+				"durability": 4,
+				"friction": 2,
+				"buoyancy": 8
+			},
+			"flammable": false,
+			"stackSize": 256
+		},
+		{
+			"uuid": "4152ce33-9b43-4c51-80a3-e0b4fe38841d",
+			"name": "obj_interactive_raftshark",
+			"renderable": "$GAME_DATA/Objects/Renderable/Interactive/obj_interactive_shark.rend",
+			"color": "304352",
+			"hull": {
+				"x": 8,
+				"y": 4,
+				"z": 2,
+				"col": "$GAME_DATA/Objects/Collision/obj_interactive_raftshark.obj"
+			},
+			"simpleInteractive": {
+				"sustainedAudio": "RaftShark",
+				"animationTime": 0.1
+			},
+			"rotationSet": "PropZ",
+			"sticky": "-Z",
+			"physicsMaterial": "Mechanical",
+			"ratings": {
+				"density": 2,
+				"durability": 6,
+				"friction": 5,
+				"buoyancy": 7
+			},
+			"flammable": true,
+			"stackSize": 256
+		}
+	]
+}

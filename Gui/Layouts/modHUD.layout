@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<MyGUI type="Layout" version="3.2.0">
+    <Widget type="Widget" skin="PanelSkin" position_real="0.921875 0.91666666666666663 0.072916666666666671 0.07407407407407407">
+        <Widget type="TextBox" skin="TextBox" position_real="0.035714285714285712 0.4375 0.9285714285714286 0.5" name="wallet_amount">
+            <Property key="Caption" value="wallet_amount"/>
+            <Property key="FontHeight" value="40"/>
+            <Property key="FontName" value="SM_TextLabel"/>
+            <Property key="TextAlign" value="Center"/>
+        </Widget>
+        <Widget type="TextBox" skin="TextBox" position_real="0.035714285714285712 0.0625 0.9285714285714286 0.375" name="wallet_title">
+            <Property key="Caption" value="FairBucks"/>
+            <Property key="FontHeight" value="25"/>
+            <Property key="FontName" value="SM_TextLabel"/>
+            <Property key="TextAlign" value="Center"/>
+        </Widget>
+    </Widget>
+    <Widget type="Widget" skin="PanelSkin" position_real="0.9375 0.87962962962962965 0.057291666666666664 0.032407407407407406">
+        <Widget type="TextBox" skin="TextBox" position_real="0.045454545454545456 0.14285714285714285 0.90909090909090906 0.7142857142857143" name="time">
+            <Property key="Caption" value="time"/>
+            <Property key="FontName" value="SM_TextLabel"/>
+            <Property key="TextAlign" value="Center"/>
+        </Widget>
+    </Widget>
+    <CodeGeneratorSettings/>
+</MyGUI>

@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<MyGUI type="Layout" version="3.2.0">
+    <Widget type="Widget" skin="BackgroundInteractableNarrow" position_real="0.375 0.375 0.26354166666666667 0.14814814814814814">
+        <Widget type="Button" skin="SecondaryButton" position_real="0.79051383399209485 0.5625 0.16798418972332016 0.28125" name="next_button">
+            <Property key="Caption" value="&gt;&gt;"/>
+            <Property key="FontHeight" value="30"/>
+            <Property key="FontName" value="SM_TextLabel"/>
+            <Property key="TextAlign" value="Center"/>
+        </Widget>
+        <Widget type="Button" skin="SecondaryButton" position_real="0.039525691699604744 0.5625 0.16798418972332016 0.28125" name="last_button">
+            <Property key="Caption" value="&lt;&lt;"/>
+            <Property key="FontHeight" value="30"/>
+            <Property key="FontName" value="SM_TextLabel"/>
+            <Property key="TextAlign" value="Center"/>
+        </Widget>
+        <Widget type="Widget" skin="PanelSkin" position_real="0.22727272727272727 0.5625 0.54347826086956519 0.28125">
+            <Widget type="TextBox" skin="TextBox" position_real="0.018181818181818181 0.1111111111111111 0.96363636363636362 0.77777777777777779" name="player_name">
+                <Property key="Caption" value="player_name"/>
+                <Property key="FontName" value="SM_TextLabel"/>
+                <Property key="TextAlign" value="Center"/>
+            </Widget>
+        </Widget>
+        <Widget type="Widget" skin="PanelSkin" position_real="0.039525691699604744 0.125 0.9189723320158103 0.3125">
+            <Widget type="EditBox" skin="EditBoxEmpty" position_real="0.010752688172043012 0.10000000000000001 0.978494623655914 0.80000000000000004" name="payment_input">
+                <Property key="Caption" value="payment_input"/>
+                <Property key="FontName" value="SM_TextLabel"/>
+                <Property key="TextAlign" value="Center"/>
+            </Widget>
+        </Widget>
+    </Widget>
+    <CodeGeneratorSettings/>
+</MyGUI>

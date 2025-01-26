@@ -1,0 +1,136 @@
+{
+   "partList" : [
+      {
+         "box" : {
+            "x" : 2,
+            "y" : 1,
+            "z" : 2
+         },
+         "color" : "675f51",
+         "flammable" : false,
+         "name" : "metalHeadArmor",
+         "physicsMaterial" : "Mechanical",
+         "renderable" : {
+            "lodList" : [
+               {
+                  "mesh" : "$CONTENT_DATA/Characters/Clothes/MetalHeadArmorPreview.fbx",
+                  "subMeshMap" : {
+                     "Hat_mat" : {
+                        "material" : "DifAsgNor",
+                        "textureList" : [
+                           "$CONTENT_DATA/Characters/Clothes/Textures/outfit_engineer_hat_dif.tga",
+                           "$SURVIVAL_DATA/Character/Char_Male/Outfit/Hat/Outfit_engineer_hat/outfit_engineer_hat_asg.tga",
+                           "$CONTENT_DATA/Objects/Textures/InvertedNor/outfit_engineer_hat_nor.tga"
+                        ]
+                     }
+                  }
+               }
+            ]
+         },
+         "rotationSet" : "PropY",
+         "sticky" : "-Y",
+         "uuid" : "e7893ad4-0261-47b7-86cb-0594c8bb89d3"
+      },
+      {
+         "box" : {
+            "x" : 2,
+            "y" : 2,
+            "z" : 1
+         },
+         "color" : "675f51",
+         "flammable" : false,
+         "name" : "metalChestplate",
+         "physicsMaterial" : "Mechanical",
+         "renderable" : {
+            "lodList" : [
+               {
+                  "mesh" : "$CONTENT_DATA/Characters/Clothes/MetalTorsoArmorPreview.fbx",
+                  "subMeshMap" : {
+                     "Metal" : {
+                        "material" : "DifAsgNor",
+                        "textureList" : [
+                           "$GAME_DATA/Objects/Textures/Blocks/blk_metal01_dif.tga",
+                           "$GAME_DATA/Objects/Textures/Blocks/blk_metal01_asg.tga",
+                           "$GAME_DATA/Objects/Textures/Blocks/blk_metal01_nor.tga"
+                        ]
+                     },
+                     "outfit_automotive_jacket" : {
+                        "material" : "DifAsgNor",
+                        "textureList" : [
+                           "$SURVIVAL_DATA/Character/Char_Male/Outfit/Jacket/Outfit_automotive_jacket/outfit_automotive_jacket_dif.tga",
+                           "$SURVIVAL_DATA/Character/Char_Male/Outfit/Jacket/Outfit_automotive_jacket/outfit_automotive_jacket_asg.tga",
+                           "$CONTENT_DATA/Objects/Textures/InvertedNor/outfit_automotive_jacket_nor.tga"
+                        ]
+                     }
+                  }
+               }
+            ]
+         },
+         "rotationSet" : "PropZ",
+         "sticky" : "-Z",
+         "uuid" : "1064ef91-5ee8-4629-84d9-ae9e8d257292"
+      },
+      {
+         "box" : {
+            "x" : 2,
+            "y" : 2,
+            "z" : 1
+         },
+         "color" : "675f51",
+         "flammable" : false,
+         "name" : "metalLegArmor",
+         "physicsMaterial" : "Mechanical",
+         "renderable" : {
+            "lodList" : [
+               {
+                  "mesh" : "$CONTENT_DATA/Characters/Clothes/MetalLegsArmorPreview.fbx",
+                  "subMeshMap" : {
+                     "outfit_automotive_pants" : {
+                        "material" : "DifAsgNor",
+                        "textureList" : [
+                           "$SURVIVAL_DATA/Character/Char_Male/Outfit/Pants/Outfit_automotive_pants/outfit_automotive_pants_dif.tga",
+                           "$SURVIVAL_DATA/Character/Char_Male/Outfit/Pants/Outfit_automotive_pants/outfit_automotive_pants_asg.tga",
+                           "$CONTENT_DATA/Objects/Textures/InvertedNor/outfit_automotive_pants_nor.tga"
+                        ]
+                     }
+                  }
+               }
+            ]
+         },
+         "rotationSet" : "PropZ",
+         "sticky" : "-Z",
+         "uuid" : "319a5f1d-cd83-4b5c-bcdc-4c675f891928"
+      },
+      {
+         "box" : {
+            "x" : 2,
+            "y" : 1,
+            "z" : 1
+         },
+         "color" : "675f51",
+         "flammable" : false,
+         "name" : "metalFeetArmor",
+         "physicsMaterial" : "Mechanical",
+         "renderable" : {
+            "lodList" : [
+               {
+                  "mesh" : "$CONTENT_DATA/Characters/Clothes/MetalFeetArmorPreview.fbx",
+                  "subMeshMap" : {
+                     "outfit_engineer_shoes" : {
+                        "material" : "DifAsgNor",
+                        "textureList" : [
+                           "$SURVIVAL_DATA/Character/Char_Male/Outfit/Shoes/Outfit_engineer_shoes/outfit_engineer_shoes_dif.tga",
+                           "$SURVIVAL_DATA/Character/Char_Male/Outfit/Shoes/Outfit_engineer_shoes/outfit_engineer_shoes_asg.tga",
+                           "$CONTENT_DATA/Objects/Textures/InvertedNor/outfit_engineer_shoes_nor.tga"
+                        ]
+                     }
+                  }
+               }
+            ]
+         },
+         "rotationSet" : "PropY",
+         "sticky" : "-Y",
+         "uuid" : "ae5e9c9c-a943-45bb-ae8f-d48e6d3cfddd"
+      }
+   ]
+}

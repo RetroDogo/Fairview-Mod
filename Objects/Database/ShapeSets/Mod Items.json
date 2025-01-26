@@ -1,0 +1,223 @@
+{
+   "partList" : [
+      {
+         "color" : "cbcbcb",
+         "cylinder" : {
+            "axis" : "Y",
+            "depth" : 4,
+            "diameter" : 2,
+            "margin" : 0.10
+         },
+         "flammable" : false,
+         "name" : "obj_survivalobject_kobag",
+         "physicsMaterial" : "Plastic",
+         "ratings" : {
+            "buoyancy" : 5,
+            "density" : 5,
+            "durability" : 10,
+            "friction" : 5
+         },
+         "renderable" : {
+            "lodList" : [
+               {
+                  "mesh" : "$SURVIVAL_DATA/Objects/Mesh/survivalobject/obj_survivalobjects_kobag.fbx",
+                  "subMeshList" : [
+                     {
+                        "material" : "DifAsgNor",
+                        "textureList" : [
+                           "$SURVIVAL_DATA/Objects/Textures/survivalobject/obj_survivalobjects_kobag_dif.tga",
+                           "$SURVIVAL_DATA/Objects/Textures/survivalobject/obj_survivalobjects_kobag_asg.tga",
+                           "$SURVIVAL_DATA/Objects/Textures/survivalobject/obj_survivalobjects_kobag_nor.tga"
+                        ]
+                     }
+                  ]
+               }
+            ]
+         },
+         "restrictions" : {
+            "buildable" : false,
+            "erasable" : false,
+            "paintable" : false,
+            "usable" : true
+         },
+         "rotationSet" : "PropZY",
+         "scripted" : {
+            "classname" : "LostItems",
+            "data" : {},
+            "filename" : "$CONTENT_DATA/Scripts/LostItems.lua"
+         },
+         "showInInventory" : false,
+         "uuid" : "de7eea5b-9262-476b-a5bb-238d0e91f81f"
+      },
+      {
+         "box" : {
+            "x" : 1,
+            "y" : 1,
+            "z" : 1
+         },
+         "color" : "FF0000",
+         "name" : "announcment_part",
+         "physicsMaterial" : "Default",
+         "renderable" : "$GAME_DATA/Objects/Renderable/Interactive/obj_interactive_logicgate.rend",
+         "rotationSet" : "PropY",
+         "scripted" : {
+            "classname" : "AP",
+            "filename" : "$CONTENT_DATA/Scripts/Announcement_Block.lua"
+         },
+         "uuid" : "2a0f670f-da40-43b2-886b-eda5437e42bb"
+      },
+      {
+         "color" : "000000",
+         "hull" : {
+            "col" : "$SURVIVAL_DATA/Objects/Collision/obj_vehicle_license_plate.obj",
+            "x" : 4,
+            "y" : 1,
+            "z" : 1
+         },
+         "name" : "license_plate",
+         "physicsMaterial" : "Metal",
+         "renderable" : {
+            "lodList" : [
+               {
+                  "mesh" : "$SURVIVAL_DATA/Objects/Mesh/vehicle/obj_vehicle_license_plate.mesh",
+                  "subMeshList" : [
+                     {
+                        "material" : "DifAsgNor",
+                        "textureList" : [
+                           "$MOD_DATA/Objects/Textures/obj_vehicle_license_plate_dif.tga",
+                           "$SURVIVAL_DATA/Objects/Textures/vehicle/obj_vehicle_license_plate_asg.tga",
+                           "$SURVIVAL_DATA/Objects/Textures/vehicle/obj_vehicle_license_plate_nor.tga"
+                        ]
+                     }
+                  ]
+               }
+            ]
+         },
+         "rotationSet" : "PropZ",
+         "scripted" : {
+            "classname" : "LP",
+            "filename" : "$CONTENT_DATA/Scripts/LicencePlate.lua"
+         },
+         "sticky" : "-Z",
+         "uuid" : "b590e27d-a948-4647-8d97-b8765dad7871"
+      },
+      {
+         "box" : {
+            "x" : 1,
+            "y" : 1,
+            "z" : 1
+         },
+         "color" : "FFFFFF",
+         "name" : "daylight_sensor",
+         "physicsMaterial" : "Metal",
+         "renderable" : "$GAME_DATA/Objects/Renderable/Interactive/obj_interactive_logicgate.rend",
+         "rotationSet" : "PropY",
+         "scripted" : {
+            "classname" : "DS",
+            "filename" : "$CONTENT_DATA/Scripts/DaylightSensor.lua"
+         },
+         "uuid" : "d24b4346-810a-46e0-9d86-aa8d93b85588"
+      },
+      {
+         "box" : {
+            "x" : 2,
+            "y" : 2,
+            "z" : 1
+         },
+         "color" : "000000",
+         "name" : "atm",
+         "physicsMaterial" : "Metal",
+         "renderable" : "$CONTENT_DATA/Objects/Renderables/ATM.rend",
+         "restrictions" : {
+            "erasable" : false,
+            "liftable" : false,
+            "paintable" : false
+         },
+         "rotationSet" : "PropZ",
+         "scripted" : {
+            "classname" : "ATM",
+            "filename" : "$CONTENT_DATA/Scripts/ATM.lua"
+         },
+         "uuid" : "c8f62867-e71a-4a33-bf0d-1be81d58b81f"
+      },
+      {
+         "color" : "FFD700",
+         "cylinder" : {
+            "axis" : "Y",
+            "depth" : 1,
+            "diameter" : 3
+         },
+         "name" : "gold_fairbuck_coin",
+         "physicsMaterial" : "Default",
+         "renderable" : "$CONTENT_DATA/Objects/Renderables/FairBuckCoin.rend",
+         "restrictions" : {
+            "paintable" : false
+         },
+         "rotationSet" : "Default",
+         "stackSize" : 999999999,
+         "uuid" : "49ae8116-bdb4-4825-845a-ad513363ac84"
+      },
+      {
+         "color" : "C0C0C0",
+         "cylinder" : {
+            "axis" : "Y",
+            "depth" : 1,
+            "diameter" : 3
+         },
+         "name" : "silver_fairbuck_coin",
+         "physicsMaterial" : "Default",
+         "renderable" : "$CONTENT_DATA/Objects/Renderables/FairBuckCoin.rend",
+         "restrictions" : {
+            "paintable" : false
+         },
+         "rotationSet" : "Default",
+         "stackSize" : 999999999,
+         "uuid" : "b8e42416-7110-4092-b69f-4b3bf7c2f8ae"
+      },
+      {
+         "color" : "B87333",
+         "cylinder" : {
+            "axis" : "Y",
+            "depth" : 1,
+            "diameter" : 3
+         },
+         "name" : "copper_fairbuck_coin",
+         "physicsMaterial" : "Default",
+         "renderable" : "$CONTENT_DATA/Objects/Renderables/FairBuckCoin.rend",
+         "restrictions" : {
+            "paintable" : false
+         },
+         "rotationSet" : "Default",
+         "stackSize" : 999999999,
+         "uuid" : "7d0262f7-1c1c-40e0-8b32-9c4f34da074e"
+      },
+      {
+         "box" : {
+            "x" : 1,
+            "y" : 1,
+            "z" : 1
+         },
+         "name" : "auto_block",
+         "physicsMaterial" : "Default",
+         "ratings" : {
+            "buoyancy" : 10,
+            "density" : 10,
+            "durability" : 10,
+            "friction" : 10
+         },
+         "renderable" : "$GAME_DATA/Objects/Renderable/Interactive/obj_interactive_logicgate.rend",
+         "restrictions" : {
+            "destructable" : false,
+            "erasable" : false,
+            "liftable" : false,
+            "paintable" : false
+         },
+         "rotationSet" : "Default",
+         "scripted" : {
+            "classname" : "AB",
+            "filename" : "$CONTENT_DATA/Scripts/Auto_Block.lua"
+         },
+         "uuid" : "6aa77e5b-aa34-406c-84db-a379a28f36c2"
+      }
+   ]
+}

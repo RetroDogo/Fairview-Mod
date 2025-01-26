@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<MyGUI type="Layout" version="3.2.0">
+    <Widget type="Widget" skin="BackgroundInteractableNarrow" position_real="0.37239583333333331 0.35555555555555557 0.27083333333333331 0.18981481481481483">
+        <Widget type="Widget" skin="PanelSkin" position_real="0.038461538461538464 0.097560975609756101 0.44230769230769229 0.80487804878048785">
+            <Widget type="EditBox" skin="EditBox" position_real="0.021739130434782608 0.69696969696969702 0.95652173913043481 0.27272727272727271" name="edit_box_1">
+                <Property key="Caption" value="0"/>
+                <Property key="FontName" value="SM_TextLabel"/>
+                <Property key="TextAlign" value="Center"/>
+            </Widget>
+            <Widget type="ImageBox" skin="ImageBox" position_real="0.36956521739130432 0.030303030303030304 0.28260869565217389 0.39393939393939392" name="light_1">
+                <Property key="ImageResource" value="LogicGateDescriptionLamps"/>
+                <Property key="ImageName" value="off"/>
+            </Widget>
+            <Widget type="TextBox" skin="TextBox" position_real="0.021739130434782608 0.45454545454545453 0.95652173913043481 0.24242424242424243" name="text_box_1">
+                <Property key="Caption" value="text_box_1"/>
+                <Property key="TextAlign" value="Center"/>
+                <Property key="FontName" value="SM_TextLabel"/>
+            </Widget>
+        </Widget>
+        <Widget type="Widget" skin="PanelSkin" position_real="0.51923076923076927 0.097560975609756101 0.44230769230769229 0.80487804878048785">
+            <Widget type="EditBox" skin="EditBox" position_real="0.021739130434782608 0.69696969696969702 0.95652173913043481 0.27272727272727271" name="edit_box_2">
+                <Property key="Caption" value="0"/>
+                <Property key="FontName" value="SM_TextLabel"/>
+                <Property key="TextAlign" value="Center"/>
+            </Widget>
+            <Widget type="ImageBox" skin="ImageBox" position_real="0.36956521739130432 0.030303030303030304 0.28260869565217389 0.39393939393939392" name="light_2">
+                <Property key="ImageResource" value="LogicGateDescriptionLamps"/>
+                <Property key="ImageName" value="on"/>
+            </Widget>
+            <Widget type="TextBox" skin="TextBox" position_real="0.021739130434782608 0.45454545454545453 0.95652173913043481 0.24242424242424243" name="text_box_2">
+                <Property key="Caption" value="text_box_2"/>
+                <Property key="FontName" value="SM_TextLabel"/>
+                <Property key="TextAlign" value="Center"/>
+            </Widget>
+        </Widget>
+    </Widget>
+    <CodeGeneratorSettings/>
+</MyGUI>

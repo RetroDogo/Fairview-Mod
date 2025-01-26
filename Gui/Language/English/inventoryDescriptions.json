@@ -1,0 +1,74 @@
+{
+   "1064ef91-5ee8-4629-84d9-ae9e8d257292" : {
+      "title" : "Armor Torso"
+   },
+   "12485df8-90c9-4e6c-843f-162c5cb109f3" : {
+      "description" : "Use this to neutralize people!",
+      "title" : "Taser"
+   },
+   "2a0f670f-da40-43b2-886b-eda5437e42bb" : {
+      "description" : "This part display the inputted message to every client!, only host can edit the text",
+      "title" : "Announcment Part"
+   },
+   "319a5f1d-cd83-4b5c-bcdc-4c675f891928" : {
+      "title" : "Armor Legs"
+   },
+   "440f3f05-4258-489a-aafe-9fc6057e17ae" : {
+      "description" : "connects to a button and the main vehicle electronic and provides a output for left signals.",
+      "title" : "Left Turn Output"
+   },
+   "49ae8116-bdb4-4825-845a-ad513363ac84" : {
+      "description" : "Worth about 1m in currency, autocollects when picked up",
+      "title" : "Gold FairBuck Coin"
+   },
+   "6681ce73-ce3d-4af0-a51c-0390b1dd501c" : {
+      "description" : "connects to a button and the main vehicle electronic and provides a output for right signals.",
+      "title" : "Right Turn Output"
+   },
+   "7d0262f7-1c1c-40e0-8b32-9c4f34da074e" : {
+      "description" : "Worth about one dollar in currency, autocollects when picked up",
+      "title" : "Copper FairBuck Coin"
+   },
+   "93d69339-eee8-48b6-8ef8-dfe77deb985e" : {
+      "description" : "Outputs the logic output for the break signal in a vehicle.",
+      "title" : "Break Output"
+   },
+   "955f789f-aadb-40b2-a54f-d4ae9d025c14" : {
+      "description" : "The main electronic control for vehicles, also connects to its counter parts for outputs.",
+      "title" : "Main Vehicle Electronic"
+   },
+   "ae5e9c9c-a943-45bb-ae8f-d48e6d3cfddd" : {
+      "title" : "Armor Boots"
+   },
+   "af89c0c4-d2bb-44dd-8300-caf29beb364c" : {
+      "description" : "They are your hands, duh! But they have a lot of options since they are your hands!! also you can press R for info on the mode.",
+      "title" : "Hands"
+   },
+   "b590e27d-a948-4647-8d97-b8765dad7871" : {
+      "description" : "The text on the plate never changes.",
+      "title" : "Licence Plate"
+   },
+   "b8e42416-7110-4092-b69f-4b3bf7c2f8ae" : {
+      "description" : "Worth about 1k in currency, autocollects when picked up",
+      "title" : "SilverFairBuck Coin"
+   },
+   "c8f62867-e71a-4a33-bf0d-1be81d58b81f" : {
+      "description" : "Place this in an atm and have the bank gui in your hands!",
+      "title" : "ATM Screen"
+   },
+   "d16a0218-db1e-4475-b2ac-15aecbf53253" : {
+      "description" : "Outputs the logic output for the reverse signal in a vehicle.",
+      "title" : "Reverse Ouput"
+   },
+   "d24b4346-810a-46e0-9d86-aa8d93b85588" : {
+      "description" : "This daylight sensor turns on at 6 pm ingame and turns off at 6 am ingame.",
+      "title" : "Daylight Sensor"
+   },
+   "db04dd40-6b99-4321-80c1-463064d11209" : {
+      "description" : "\u0016",
+      "title" : "HandCuffs"
+   },
+   "e7893ad4-0261-47b7-86cb-0594c8bb89d3" : {
+      "title" : "Armor Helmet"
+   }
+}

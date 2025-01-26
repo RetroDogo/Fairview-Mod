@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<MyGUI type="Layout" version="3.2.0">
+    <Widget type="Widget" skin="PanelEmpty" position_real="0 0 0.61562499999999998 0.82685185185185184" name="BackPanel">
+        <Property key="NeedKey" value="false"/>
+        <Property key="InheritsPick" value="true"/>
+        <Property key="NeedMouse" value="false"/>
+        <Widget type="Widget" skin="BackgroundDarkRoundedUpperRight" position_real="0 0.21724524076147816 1 0.48152295632698766">
+            <Widget type="TextBox" skin="TextBox" position_real="0.065143824027072764 0.055813953488372092 0.42216582064297803 0.065116279069767441" name="UpperName">
+                <Property key="FontName" value="SM_HeaderLarge_Wide"/>
+                <Property key="Caption" value="#{CHEST_TITLE_CHEST}"/>
+                <Property key="TextAlign" value="Left VCenter"/>
+            </Widget>
+            <Widget type="ImageBox" skin="ImageBox" position_real="0.023688663282571912 0.055813953488372092 0.027918781725888325 0.065116279069767441" name="ChestIcon">
+                <Property key="ImageTexture" value="gui_inventory_icon_chest.png"/>
+            </Widget>
+            <Widget type="ImageBox" skin="ImageBox" position_real="0.023688663282571912 0.055813953488372092 0.027918781725888325 0.065116279069767441" name="LostItemsIcon">
+                <Property key="Visible" value="false"/>
+                <Property key="ImageTexture" value="gui_inventory_icon_lost_items.png"/>
+            </Widget>
+            <Widget type="ItemBox" skin="InventoryItemBox2" position_real="0.0194585448392555 0.16279069767441862 0.93824027072758043 0.76976744186046508" name="UpperGrid">
+                <Property key="NeedKey" value="false"/>
+            </Widget>
+            <Widget type="ScrollBar" skin="InventoryVSlider" position_real="0.9627749576988156 0.16976744186046511 0.021996615905245348 0.76511627906976742" name="UpperScroll">
+                <Property key="Range" value="101"/>
+                <Property key="RangePosition" value="0"/>
+            </Widget>
+            <Widget type="Button" skin="ActiveButton" position_real="0.85702199661590528 0.023255813953488372 0.10152284263959391 0.11395348837209303" name="TakeAll">
+                <Property key="TextAlign" value="Center"/>
+                <Property key="FontName" value="SM_ButtonSmallBold"/>
+                <Property key="Caption" value="#{CHEST_TAKE_ALL}"/>
+            </Widget>
+        </Widget>
+    </Widget>
+    <Widget type="Widget" skin="PanelEmpty" position_real="0 0.88055555555555554 0.59375 0.11851851851851852" name="HotbarPanel"/>
+    <CodeGeneratorSettings/>
+</MyGUI>

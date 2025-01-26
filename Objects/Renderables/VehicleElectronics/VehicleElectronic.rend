@@ -1,0 +1,56 @@
+{
+   "lodList" : [
+      {
+         "includes" : [
+            "POSITION",
+            "UV0",
+            "UV1",
+            "NORMAL",
+            "TANGENTS",
+            "BLEND_INDICES",
+            "BLEND_WEIGHTS"
+         ],
+         "mesh" : "$GAME_DATA/Objects/Mesh/interactive/obj_interactive_logicgate_off.fbx",
+         "minViewSize" : 20,
+         "pose0" : "$GAME_DATA/Objects/Mesh/interactive/obj_interactive_logicgate_on.fbx",
+         "subMeshMap" : {
+            "logicgate" : {
+               "material" : "PoseAnimDifAsgNorAo",
+               "textureList" : [
+                  "$CONTENT_DATA/Objects/Textures/VehicleElectronics/VehicleElectronic_dif.tga",
+                  "$GAME_DATA/Objects/Textures/interactive/obj_interactive_logicgate_asg.tga",
+                  "$GAME_DATA/Objects/Textures/interactive/obj_interactive_logicgate_nor.tga",
+                  "$GAME_DATA/Objects/Textures/interactive/obj_interactive_logicgate_ao.tga"
+               ]
+            },
+            "screen" : {
+               "custom" : {
+                  "uv0" : {
+                     "u" : 0.1666666716337204,
+                     "v" : 0.1644999980926514
+                  }
+               },
+               "material" : "UVAnimDifAsgNor",
+               "textureList" : [
+                  "$CONTENT_DATA/Objects/Textures/VehicleElectronics/VehicleElectronic_dif.tga",
+                  "$GAME_DATA/Objects/Textures/interactive/obj_interactive_logicgate_asg.tga",
+                  "$GAME_DATA/Objects/Textures/interactive/obj_interactive_logicgate_nor.tga"
+               ]
+            }
+         }
+      },
+      {
+         "mesh" : "$GAME_DATA/Objects/Mesh/interactive/obj_interactive_logicgate_lod1.fbx",
+         "subMeshMap" : {
+            "logicgate" : {
+               "material" : "DifAsg",
+               "textureList" : [
+                  "$CONTENT_DATA/Objects/Textures/VehicleElectronics/VehicleElectronic_dif.tga",
+                  "$GAME_DATA/Objects/Textures/interactive/obj_interactive_logicgate_asg.tga",
+                  ""
+               ]
+            }
+         }
+      }
+   ]
+}

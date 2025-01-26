@@ -1,0 +1,33 @@
+{
+	"shapeSetList": [
+    	"$CONTENT_DATA/Objects/Database/ShapeSets/Mod Items.json",
+		"$CONTENT_DATA/Objects/Database/ShapeSets/Vehicle Electronics.json",
+		"$CONTENT_DATA/Objects/Database/ShapeSets/equipment.json",
+		"$CONTENT_DATA/Objects/Database/ShapeSets/oldGameItems/blocks.json",
+		"$CONTENT_DATA/Objects/Database/ShapeSets/oldGameItems/wedges.json",
+		"$CONTENT_DATA/Objects/Database/ShapeSets/oldGameItems/interactive.json",
+		"$CONTENT_DATA/Objects/Database/ShapeSets/oldGameItems/lights.json", 
+		"$CONTENT_DATA/Objects/Database/ShapeSets/oldGameItems/industrial.json",
+		"$CONTENT_DATA/Objects/Database/ShapeSets/oldGameItems/spaceship.json",
+		"$CONTENT_DATA/Objects/Database/ShapeSets/oldGameItems/fittings.json",
+		"$CONTENT_DATA/Objects/Database/ShapeSets/oldGameItems/containers.json",
+		"$CONTENT_DATA/Objects/Database/ShapeSets/oldGameItems/decor.json",
+		"$CONTENT_DATA/Objects/Database/ShapeSets/oldGameItems/plants.json",
+		
+		"$CONTENT_DATA/Objects/Database/ShapeSets/newGameItems/blocks.json",
+		"$CONTENT_DATA/Objects/Database/ShapeSets/newGameItems/lights.json",
+		"$CONTENT_DATA/Objects/Database/ShapeSets/newGameItems/vehicle.json",
+		"$CONTENT_DATA/Objects/Database/ShapeSets/newGameItems/industrial.json",
+		"$CONTENT_DATA/Objects/Database/ShapeSets/newGameItems/fittings.json",
+		"$CONTENT_DATA/Objects/Database/ShapeSets/newGameItems/containers.json",
+		"$CONTENT_DATA/Objects/Database/ShapeSets/newGameItems/decor.json",
+		"$CONTENT_DATA/Objects/Database/ShapeSets/newGameItems/warehouse.json",
+		"$CONTENT_DATA/Objects/Database/ShapeSets/newGameItems/construction.json",
+		"$CONTENT_DATA/Objects/Database/ShapeSets/newGameItems/building.json",
+		"$CONTENT_DATA/Objects/Database/ShapeSets/newGameItems/manmade.json",
+		"$CONTENT_DATA/Objects/Database/ShapeSets/newGameItems/resources.json",
+
+
+		"$CONTENT_DATA/Objects/Database/ShapeSets/newGameItems/override.json"
+	]
+}
