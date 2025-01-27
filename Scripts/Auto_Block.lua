@@ -3,6 +3,7 @@ AB = class()
 dofile("$CONTENT_DATA/Scripts/Currency.lua")
 dofile("$CONTENT_DATA/Scripts/Utils.lua")
 dofile("$CONTENT_DATA/Scripts/QueueMessages.lua")
+dofile("$CONTENT_DATA/Scripts/PlayerList.lua")
 
 -- server
 
@@ -27,6 +28,7 @@ function AB.server_onCreate( self )
             for _,player in pairs(sm.player.getAllPlayers()) do if player.id == 1 then hostPlayer = player end end
         end
         self.sv = {}
+        self.sv.currenctTime = 0
         if type(self.storage:load()) == "table" then
             self.sv.tickedTime = self.storage:load().time
         end
@@ -34,12 +36,9 @@ function AB.server_onCreate( self )
         self.sv.playerTable = {}
 
     end)
-    if self.status1 ~= status then
-        if not status and err then
-            self.network:sendToClient(hostPlayer,"cl_sendTextMessage","#FF0000"..err)
-            print(err)
-        end
-        self.status1 = status
+    if not status and err then
+        self.network:sendToClient(hostPlayer,"cl_sendTextMessage","#FF0000"..err)
+        print(err)
     end
 end
 
@@ -59,6 +58,9 @@ function AB.server_onFixedUpdate( self, timeStep )
             self.sv = {}
         end
         Currency_server_onFixedUpdate(self)
+
+        -- counts the current time to get session time
+        self.sv.currenctTime = self.sv.currenctTime + 1
     
         -- counts the time on the server to make life easier
         local seconds = 1800
@@ -88,6 +90,10 @@ function AB.server_onFixedUpdate( self, timeStep )
                 print("update name for  "..player.name)
                 self.network:sendToClient(existantPlayer,"client_onUpdateNametags",{text = tostring(player.name.." | "..player.id),player = player,distance = 4})
             end
+
+            -- sets the current session time and world time on client
+            self.network:setClientData( {type = "currentTime", value = self.sv.currenctTime} )
+            self.network:setClientData( {type = "time", value = self.sv.tickedTime} )
             
             -- put player joining code here
         end
@@ -104,20 +110,25 @@ function AB.server_onFixedUpdate( self, timeStep )
                 end
             end
         end
-    
-        -- set time for clients every 4 seconds bc game sucks
-        -- also saves time while at it
+
+        -- saves time every 4 seconds
         if sm.game.getCurrentTick()%160 == 0 then
-            self.network:setClientData( {type = "time", value = self.sv.tickedTime} )
             self.storage:save({time = self.sv.tickedTime})
         end
+        local Currency = sm.json.open("$CONTENT_DATA/Json/Currency.json")
+        self.sv.oldCurrency = Currency
+        self.network:setClientData( {type = "currency", value = Currency} )
+
     end)
-    if self.status3 ~= status then
-        if not status and err then
-            self.network:sendToClient(hostPlayer,"cl_sendTextMessage","#FF0000"..err)
-            print(err)
-        end
-        self.status3 = status
+    if not status and err then
+        self.network:sendToClient(hostPlayer,"cl_sendTextMessage","#FF0000"..err)
+        print(err)
+    end
+end
+
+function AB.onCommand(self,data)
+    if data.command == "/pl" then
+        self.network:sendToClient(data.data.player,"PlayerList_clientOnGui")
     end
 end
 
@@ -167,12 +178,9 @@ function AB.client_onCreate( self )
             end
         end
     end)
-    if self.status4 ~= status then
-        if not status and err then
-            self.network:sendToServer("sv_sendMessageToHost",{text = "#FF0000"..err, player = sm.localPlayer.getPlayer()})
-            print(err)
-        end
-        self.status4 = status
+    if not status and err then
+        self.network:sendToServer("sv_sendMessageToHost",{text = "#FF0000"..err, player = sm.localPlayer.getPlayer()})
+        print(err)
     end
 end
 
@@ -180,6 +188,14 @@ local CellSize = 64
 
 function AB.client_onFixedUpdate( self, timeStep )
     local status, err = pcall(function()
+
+        PlayerList_onFixedUpdate(self)
+
+        -- couns current session time on client to make life better
+        if self.cl.currentTime then
+            self.cl.currentTime = self.cl.currentTime + 1
+        end
+
         -- checks if the gui isnt open, then opens it if needed
         if not self.cl.modHUD:isActive() then
             self.cl.modHUD:open()
@@ -250,31 +266,95 @@ function AB.client_onFixedUpdate( self, timeStep )
         self.cl.compassHUD:setText( "CellText", cellCoord )
 
     end)
-    if self.status5 ~= status then
-        if not status and err then
-            self.network:sendToServer("sv_sendMessageToHost",{text = "#FF0000"..err, player = sm.localPlayer.getPlayer()})
-            print(err)
-        end
-        self.status5 = status
+    if not status and err then
+        self.network:sendToServer("sv_sendMessageToHost",{text = "#FF0000"..err, player = sm.localPlayer.getPlayer()})
+        print(err)
     end
 end
 
 function AB.client_onClientDataUpdate( self, data )
+    print(data.type)
     local status, err = pcall(function()
         if data.type == "time" then
             self.cl.tickedTime = data.value
-        elseif data.type == "wallet" then
-            if sm.localPlayer.getPlayer() == data.player then
-                self.cl.modHUD:setText( "wallet_amount", "$"..formatWithCommas(data.value))
-            end
+        elseif data.type == "currency" then
+            self.cl.Currency = data.value
+            self.cl.modHUD:setText( "wallet_amount", "$"..formatWithCommas(data.value[tostring(sm.localPlayer.getPlayer().id)][1]))
+        elseif data.type == "currentTime" then
+            self.cl.currentTime = data.value
         end
     end)
-    if self.status6 ~= status then
-        if not status and err then
-            self.network:sendToServer("sv_sendMessageToHost",{text = "#FF0000"..err, player = sm.localPlayer.getPlayer()})
-            print(err)
+    if not status and err then
+        self.network:sendToServer("sv_sendMessageToHost",{text = "#FF0000"..err, player = sm.localPlayer.getPlayer()})
+        print(err)
+    end
+end
+
+function AB.PlayerList_clientOnGui(self)
+    if self.cl.playerList then
+        self.cl.playerList:close()
+        self.cl.playerList:destroy()
+        self.cl.playerList = nil
+    else
+        local players = sm.player.getAllPlayers()
+        self.cl.playerList  = sm.gui.createGuiFromLayout( "$CONTENT_DATA/Gui/layouts/playerListGui.layout" ,false, {
+            isHud = true,
+            isInteractive = false,
+            needsCursor = false,
+            hidesHotbar = false,
+            isOverlapped = false,
+        })
+
+        -- counts total players though currency
+        local count = 0
+        for _ in pairs(self.cl.Currency) do
+            count = count + 1
         end
-        self.status6 = status
+        
+        -- sets the data up at the top
+        self.cl.playerList:setText( "topTextBox 2", "Total Players: "..tostring(count-1) )
+        self.cl.playerList:setText( "topTextBox 3", "Current Players: "..tostring(#players) )
+        self.cl.playerList:setText( "topTextBox 1", "Host: "..hostPlayer.name )
+        self.cl.playerList:setText( "topTextBox 4", "Time: "..tickToTime(sm.game.getCurrentTick()) )
+        self.cl.playerList:setText( "topTextBox 5", "Session: "..tickToTime(self.cl.currentTime) )
+
+        -- enables the right background
+        self.cl.playerList:setVisible( "BG 1", #players<5 )
+        self.cl.playerList:setVisible( "BG 2", (#players>5 and #players<10))
+        self.cl.playerList:setVisible( "BG 3", (#players>10 and #players<15) )
+        self.cl.playerList:setVisible( "BG 4", (#players>15 and #players<20) )
+        self.cl.playerList:setVisible( "BG 5", (#players>20 and #players<25) )
+        self.cl.playerList:setVisible( "BG 6", #players>30 )
+        local playerList = {}
+        -- Convert players into a playerList for easiness
+        for _, player in pairs(players) do
+            table.insert(playerList, {id = player.id, name = player.name})
+        end
+
+        -- Sort playerList by player ID
+        table.sort(playerList, function(a, b)
+            return a.id < b.id
+        end)
+
+        -- Update the UI to show players in order with least indices
+        local index = 1
+        for _, player in ipairs(playerList) do
+            if index <= 30 then
+                -- Display the player's name and id
+                self.cl.playerList:setText("nameText " .. tostring(index), player.name .. " | " .. tostring(player.id))
+                self.cl.playerList:setText("extraText " .. tostring(index), "")
+                self.cl.playerList:setVisible("playerBox " .. tostring(index), true)
+                index = index + 1
+            else
+                break
+            end
+        end
+
+        -- Hide unused slots beyond the number of players
+        for i = index, 30 do
+            self.cl.playerList:setVisible("playerBox " .. tostring(i), false)
+        end
+        self.cl.playerList:open()
     end
 end
 

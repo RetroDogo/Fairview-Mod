@@ -4,7 +4,6 @@ dofile("$CONTENT_DATA/Scripts/Currency.lua")
 dofile("$CONTENT_DATA/Scripts/Utils.lua")
 dofile("$CONTENT_DATA/Scripts/pvp&teams.lua")
 dofile("$CONTENT_DATA/Scripts/Jobs.lua")
-dofile("$CONTENT_DATA/Scripts/PlayerList.lua")
 
 local jsonFiles = {
     "$CONTENT_DATA/Json/Currency.json",
@@ -552,7 +551,17 @@ function commands.sv_runCommand(self,data)
                     self.network:sendToClient(checkPlayer(tonumber(data[2])), "cl_sendTextMessage","[Private Message] "..--[[playerTeamColor..]]data.player.name.."#FFFFFF: "..messageString)
                 end
             elseif command == "/pl" then 
-                self.network:sendToClient(data.player,"PlayerList_clientOnGuiOpen",self)
+                local interactable = nil
+	            for _,body in pairs(sm.body.getAllBodies()) do
+	            	for _,shape in pairs(sm.body.getShapes(body)) do
+	            		if shape.uuid == sm.uuid.new("6aa77e5b-aa34-406c-84db-a379a28f36c2") and shape ~= self.shape then
+                            interactable = shape.interactable
+                        end
+	            	end
+                end
+                if interactable then
+                    sm.event.sendToInteractable(interactable,"onCommand",{command = "/pl",data = data})
+                end
             -- team commands
             elseif command == "/createteam" then
                 --TEAM_onTeamCreate(self,data[2],data[3],data.player)

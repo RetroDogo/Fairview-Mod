@@ -337,3 +337,63 @@ function extractPlaces(number)
     local millions = math.floor(number / 1000000)
     return hundreds, thousands, millions
 end
+
+function tickToTime(tick)
+    local totalSeconds = tick / 40  -- since 1 tick = 1/40 of a second
+
+    -- Break down the total seconds into months, days, hours, minutes, seconds, and milliseconds
+    local months = math.floor(totalSeconds / (30 * 24 * 60 * 60))  -- Approx 30 days in a month
+    totalSeconds = totalSeconds % (30 * 24 * 60 * 60)
+
+    local days = math.floor(totalSeconds / (24 * 60 * 60))
+    totalSeconds = totalSeconds % (24 * 60 * 60)
+
+    local hours = math.floor(totalSeconds / (60 * 60))
+    totalSeconds = totalSeconds % (60 * 60)
+
+    local minutes = math.floor(totalSeconds / 60)
+    local seconds = math.floor(totalSeconds % 60)
+    local milliseconds = math.floor((totalSeconds % 1) * 1000)
+
+    -- Build the output string in a short format
+    local timeString = ""
+    if months > 0 then timeString = timeString .. months .. "m " end
+    if days > 0 then timeString = timeString .. days .. "d " end
+    if hours > 0 then timeString = timeString .. hours .. "h " end
+    if minutes > 0 then timeString = timeString .. minutes .. "m " end
+    if seconds > 0 then timeString = timeString .. seconds .. "s " end
+    return timeString
+end
+
+-- Function to compare two tables
+function areTablesEqual(table1, table2)
+    -- If either is not a table, return false
+    if type(table1) ~= "table" or type(table2) ~= "table" then
+        return false
+    end
+
+    -- Check if they have the same number of keys
+    local table1Keys = 0
+    local table2Keys = 0
+    for key in pairs(table1) do
+        table1Keys = table1Keys + 1
+        if table2[key] == nil then
+            return false -- Key exists in table1 but not in table2
+        end
+    end
+    for _ in pairs(table2) do
+        table2Keys = table2Keys + 1
+    end
+    if table1Keys ~= table2Keys then
+        return false -- Different number of keys
+    end
+
+    -- Recursively compare all key-value pairs
+    for key, value in pairs(table1) do
+        if not areTablesEqual(value, table2[key]) then
+            return false
+        end
+    end
+
+    return true
+end

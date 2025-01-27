@@ -1,23 +1,78 @@
-function PlayerList_updateGui(self)
-    if self.sv.playerList then
-
+function PlayerList_onFixedUpdate(self)
+    if self.cl.playerList then
+        local players = sm.player.getAllPlayers()
+        
+        -- counts total players though currency
+        local count = 0
+        for _ in pairs(self.cl.Currency) do
+            count = count + 1
+        end
+        
+        -- sets the data up at the top
+        self.cl.playerList:setText( "topTextBox 2", "Total Players: "..tostring(count-1) )
+        self.cl.playerList:setText( "topTextBox 3", "Current Players: "..tostring(#players) )
+        self.cl.playerList:setText( "topTextBox 1", "Host: "..hostPlayer.name )
+        self.cl.playerList:setText( "topTextBox 4", "Time: "..tickToTime(sm.game.getCurrentTick()) )
+        self.cl.playerList:setText( "topTextBox 5", "Session: "..tickToTime(self.cl.currentTime) )
+    
+        -- enables the right background
+        self.cl.playerList:setVisible( "BG 1", #players<5 )
+        self.cl.playerList:setVisible( "BG 2", (#players>5 and #players<10))
+        self.cl.playerList:setVisible( "BG 3", (#players>10 and #players<15) )
+        self.cl.playerList:setVisible( "BG 4", (#players>15 and #players<20) )
+        self.cl.playerList:setVisible( "BG 5", (#players>20 and #players<25) )
+        self.cl.playerList:setVisible( "BG 6", #players>30 )
+        local playerList = {}
+        -- Convert players into a playerList for easiness
+        for _, player in pairs(players) do
+            table.insert(playerList, {id = player.id, name = player.name})
+        end
+    
+        -- Sort playerList by player ID
+        table.sort(playerList, function(a, b)
+            return a.id < b.id
+        end)
+    
+        -- Update the UI to show players in order with least indices
+        local index = 1
+        for _, player in ipairs(playerList) do
+            if index <= 30 then
+                -- Display the player's name and id
+                self.cl.playerList:setText("nameText " .. tostring(index), player.name .. " | " .. tostring(player.id))
+                self.cl.playerList:setText("extraText " .. tostring(index), "")
+                self.cl.playerList:setVisible("playerBox " .. tostring(index), true)
+                index = index + 1
+            else
+                break
+            end
+        end
+    
+        -- Hide unused slots beyond the number of players
+        for i = index, 30 do
+            self.cl.playerList:setVisible("playerBox " .. tostring(i), false)
+        end
     else
-        print("goober. *facepalm* you dont have a gui to edit.")
+        --print("goober. *facepalm* you dont have a gui to edit.")
     end
 end
 
-function commands.PlayerList_clientOnGuiOpen(self)
-    self.sv.playerList = sm.gui.createGuiFromLayout("$CONTENT_DATA/Gui/layouts/playerListGui.layout",true)
-    -- enables the right background
-    local players = sm.player.getAllPlayers()
-    self.sv.playerList:setVisible( "BG 1", #players<5 )
-    self.sv.playerList:setVisible( "BG 2", (#players>5 and #players<10))
-    self.sv.playerList:setVisible( "BG 3", (#players>10 and #players<15) )
-    self.sv.playerList:setVisible( "BG 4", (#players>15 and #players<20) )
-    self.sv.playerList:setVisible( "BG 5", (#players>20 and #players<25) )
-    self.sv.playerList:setVisible( "BG 6", #players>30 )
-    for id,player in pairs(players) do
-        
+function reorderTableByValueSize(tbl)
+    -- Create a list of keys and their corresponding value sizes
+    local sizeList = {}
+    for key, value in pairs(tbl) do
+        if type(value.id) == "number" then
+            table.insert(sizeList, {key = key, size = math.abs(value.id)}) -- Numbers use absolute value
+        end
     end
-    self.sv.playerList:open()
+
+    -- Sort the sizeList by value size in ascending order
+    table.sort(sizeList, function(a, b) return a.size < b.size end)
+
+    -- Create a new table with reordered indices
+    local newTable = {}
+    for index, entry in ipairs(sizeList) do
+        newTable[index] = tbl[entry.key]
+    end
+
+    return newTable
 end
