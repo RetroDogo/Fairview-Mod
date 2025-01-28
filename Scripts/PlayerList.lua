@@ -1,4 +1,10 @@
 function PlayerList_onFixedUpdate(self)
+
+    -- updates the player tines client side
+    for i,count in pairs(self.cl.playerSessionTime) do
+        self.cl.playerSessionTime[i] = self.cl.playerSessionTime[i] + 1
+    end
+
     if self.cl.playerList then
         local players = sm.player.getAllPlayers()
         
@@ -13,7 +19,7 @@ function PlayerList_onFixedUpdate(self)
         self.cl.playerList:setText( "topTextBox 3", "Current Players: "..tostring(#players) )
         self.cl.playerList:setText( "topTextBox 1", "Host: "..hostPlayer.name )
         self.cl.playerList:setText( "topTextBox 4", "Time: "..tickToTime(sm.game.getCurrentTick()) )
-        self.cl.playerList:setText( "topTextBox 5", "Session: "..tickToTime(self.cl.currentTime) )
+        self.cl.playerList:setText( "topTextBox 5", "Session: ".. tickToTime(self.cl.currentTime) )
     
         -- enables the right background
         self.cl.playerList:setVisible( "BG 1", #players<5 )
@@ -39,7 +45,9 @@ function PlayerList_onFixedUpdate(self)
             if index <= 30 then
                 -- Display the player's name and id
                 self.cl.playerList:setText("nameText " .. tostring(index), player.name .. " | " .. tostring(player.id))
-                self.cl.playerList:setText("extraText " .. tostring(index), "")
+                self.cl.playerList:setText("extraText " .. tostring(index), player.id == 1 and tickToTime(self.cl.currentTime) or 
+                    self.cl.playerSessionTime[player.id]~=nil and tickToTime(self.cl.playerSessionTime[player.id]) or "Unknown"
+                )
                 self.cl.playerList:setVisible("playerBox " .. tostring(index), true)
                 index = index + 1
             else
@@ -51,8 +59,6 @@ function PlayerList_onFixedUpdate(self)
         for i = index, 30 do
             self.cl.playerList:setVisible("playerBox " .. tostring(i), false)
         end
-    else
-        --print("goober. *facepalm* you dont have a gui to edit.")
     end
 end
 

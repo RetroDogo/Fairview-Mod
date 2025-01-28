@@ -385,6 +385,7 @@ function PVP_client_onCreate(self)
 end
 
 function PVP_client_onFixedUpdate(self)
+
     if self.cl.death and sm.game.getCurrentTick()%40 == 0 then
         self.cl.death = math.max(self.cl.death-1, 0)
 

@@ -135,36 +135,42 @@ function commands.server_onCreate( self )
 end
 
 function commands.server_onRefresh( self )
-    if self.tool:getOwner().id == 1 then
-        PVP_server_onRefresh(self)
+    local status, err = pcall(function()
+        if self.tool:getOwner().id == 1 then
+            PVP_server_onRefresh(self)
 
-        hostPlayer.character:setDowned(false)
+            hostPlayer.character:setDowned(false)
 
-         -- reverts all jsons to defaults
-         for _,v in pairs(jsonFiles) do
-            local defaultFile = "$CONTENT_DATA/Json/DefaultJson/"..string.sub(v,20,100)
-            local defaultData = sm.json.open(defaultFile)
-            --print("reset data for",v)
-            sm.json.save(defaultData,v)
-        end
-        
-        -- tries loading old data, if it fails it just gives up lmao
-        local savedData = self.storage:load()
-        if savedData["Currency.json"] then
-            for _,v in pairs(jsonFiles) do
-                local data = savedData[string.sub(v,20,100)]
-                -- checks for data inside the table
-                local ifData = false
-                for _,data in pairs(data) do
-                    ifData = true
-                end
-                if ifData then
-                    --print("setting data for",v,"to",data)
-                    sm.json.save(data,v)
+             -- reverts all jsons to defaults
+             for _,v in pairs(jsonFiles) do
+                local defaultFile = "$CONTENT_DATA/Json/DefaultJson/"..string.sub(v,20,100)
+                local defaultData = sm.json.open(defaultFile)
+                --print("reset data for",v)
+                sm.json.save(defaultData,v)
+            end
+
+            -- tries loading old data, if it fails it just gives up lmao
+            local savedData = self.storage:load()
+            if savedData["Currency.json"] then
+                for _,v in pairs(jsonFiles) do
+                    local data = savedData[string.sub(v,20,100)]
+                    -- checks for data inside the table
+                    local ifData = false
+                    for _,data in pairs(data) do
+                        ifData = true
+                    end
+                    if ifData then
+                        --print("setting data for",v,"to",data)
+                        sm.json.save(data,v)
+                    end
                 end
             end
-        end
 
+        end
+    end)
+    if not status then
+        self.network:sendToClient(hostPlayer,"cl_sendTextMessage","#FF0000"..err)
+        print(err)
     end
 end
 
@@ -209,7 +215,8 @@ function commands.server_onFixedUpdate( self, timeStep )
                     if player:getCharacter() and player ~= hostPlayer then
                         if not player:getCharacter():isDowned() then
                             player:getCharacter():setDowned( true )
-                            self.network:sendToClient(player, "cl_sendTextMessage","The host is busy, you have been locked!")
+                            self.network:sendToClients("cl_updateSpeed",{player = player, speedFraction = player:getCharacter():isDowned() and 0 or 1})
+                            self.network:sendToClient(player, "cl_sendTextMessage","#FFFFFFThe host is busy, you have been locked!")
                         end
                     end
                 end
@@ -307,14 +314,13 @@ function commands.server_onFixedUpdate( self, timeStep )
                 for _,player in pairs(sm.player.getAllPlayers()) do
                     for _,respawn in pairs(self.sv.respawns) do
                         if respawn.player == player then goto continue end
-                        local locked = findValueInTable(_G.lockedPlayers,player) and true or false
-                        player.character.publicData.ifLocked = ilocked
-                        player.character:setDowned( locked )
-                        local speedFraction = locked and 0 or 1
-                        player.character.publicData.waterMovementSpeedFraction = speedFraction 
-                        self.network:sendToClients("cl_updateSpeed",{player = player, speedFraction = speedFraction})
-                    
                     end
+                    local locked = findValueInTable(_G.lockedPlayers,player) and true or false
+                    player.character.publicData.ifLocked = ilocked
+                    player.character:setDowned( locked )
+                    local speedFraction = locked and 0 or 1
+                    player.character.publicData.waterMovementSpeedFraction = speedFraction 
+                    self.network:sendToClients("cl_updateSpeed",{player = player, speedFraction = speedFraction})
                     :: continue ::
                 end
             end
@@ -347,10 +353,10 @@ function commands.server_onFixedUpdate( self, timeStep )
     end)
     if self.status1 ~= status then
         if not status and err then
+            self.status1 = status
             self.network:sendToClient(hostPlayer,"cl_sendTextMessage","#FF0000"..err)
-            print(err)
         end
-        self.status1 = status
+        print(err)
     end
 end
 
@@ -374,10 +380,10 @@ function commands.client_onFixedUpdate( self, timeStep )
     end)
     if self.status2 ~= status then
         if not status and err then
+            self.status2 = status
             self.network:sendToServer("sv_sendMessageToHost",{text = "#FF0000"..err, player = sm.localPlayer.getPlayer()})
-            print(err)
         end
-        self.status2 = status
+        print(err)
     end
 end
 
@@ -452,16 +458,16 @@ function sm.event.sendToWorld(world, callback, params)
         "/ragdoll",
         "/msg",
         "/pl",
-        "/createteam",
-        "/editteam",
-        "/inviteteam",
-        "/deleteteam",
-        "/acceptteam",
-        "/denyteam",
-        "/leaveteam",
-        "/transferteam",
-        "/kickteam",
-        "/cancelteam",
+        --"/createteam",
+        --"/editteam",
+        --"/inviteteam",
+        --"/deleteteam",
+        --"/acceptteam",
+        --"/denyteam",
+        --"/leaveteam",
+        --"/transferteam",
+        --"/kickteam",
+        --"/cancelteam",
         "/govpay",
         "/checkcash",
         "/setdp",
@@ -658,7 +664,7 @@ function commands.sv_runCommand(self,data)
         end
     end)
     if not status and err then
-        self.network:sendToServer("sv_sendMessageToHost",{text = "#FF0000"..err, player = sm.localPlayer.getPlayer()})
+        self.network:sendToClient(hostPlayer,"cl_sendTextMessage","#FF0000"..err)
         print(err)
     end
 end
@@ -830,10 +836,6 @@ function commands.cl_updateSpeed(self,data)
 end
 
 function commands.cl_updateHealthBar(self, hp)
-    if not self.cl then
-        sm.event.sendToInteractable(g_cl_interactable, "cl_updateHealthBar", hp)
-    end
-
     if self.cl and self.cl.hud then
         self.cl.hud:setSliderData( "Health", maxHP * 10, hp * 10 )
     end

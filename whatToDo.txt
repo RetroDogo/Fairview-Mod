@@ -21,6 +21,7 @@ Already done
     added item drops, when you drag stuff out of your inventories
 
 Very Important
+    fix the erasing inventory on reconnect
 
 Somewhat Important
     work on hands to add patting for checking inventories
@@ -52,3 +53,10 @@ Not really important just cool
         players with the most deaths are on leaderboards
         players with the most time without deaths are on leaderboards
         it gets updated every 10 minutes
+
+tings to fix
+    health bar doesnt change for first time reloading before dying (i fucking dont know what the fuck)
+    first inventory clear doesnt work
+    bag icons dont work yet, need to fix or straight
+    govpay doesnt work
+    make sure that setDP works even when people arent awake (online)

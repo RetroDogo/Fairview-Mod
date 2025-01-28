@@ -34,6 +34,7 @@ function AB.server_onCreate( self )
         end
         if not self.sv.tickedTime then self.sv.tickedTime = (1800*40)/2 end
         self.sv.playerTable = {}
+        self.sv.playerSessionTime = {}
 
     end)
     if not status and err then
@@ -85,12 +86,23 @@ function AB.server_onFixedUpdate( self, timeStep )
             -- prints all queued messages on join
             server_queuePlayerJoined(self,player)
 
-            -- sets the usernames
-            for _,existantPlayer in pairs(sm.player.getAllPlayers()) do
-                print("update name for  "..player.name)
-                self.network:sendToClient(existantPlayer,"client_onUpdateNametags",{text = tostring(player.name.." | "..player.id),player = player,distance = 4})
+            -- adds the player to the self.sv.playerSessionTime
+            -- as well as update all clients on this
+            if player.id ~= 1 then
+                print(self.sv.playerSessionTime[player.id])
+                if not self.sv.playerSessionTime[player.id] then
+                    table.insert(self.sv.playerSessionTime,player.id,0)
+                end
+                self.network:sendToClients("setClientData", {type = "playerSessionTimer", value = self.sv.playerSessionTime} )
             end
-            
+
+            -- sets all needed client data
+            self.network:sendToClients("setClientData", {type = "currentTime", value = self.sv.currenctTime} )
+            self.network:sendToClients("setClientData", {type = "time", value = self.sv.tickedTime} )
+            local Currency = sm.json.open("$CONTENT_DATA/Json/Currency.json")
+            self.sv.oldCurrency = Currency
+            self.network:sendToClients("setClientData", {type = "currency", value = Currency} )
+
             -- put player joining code here
         end
         
@@ -107,22 +119,31 @@ function AB.server_onFixedUpdate( self, timeStep )
             end
         end
 
+        -- updates the active players times
+        for _,player in pairs(sm.player.getAllPlayers()) do
+            if player.id ~= 1 then
+                if self.sv.playerSessionTime[player.id] then
+                    self.sv.playerSessionTime[player.id] = self.sv.playerSessionTime[player.id] + 1
+                end
+            end
+        end
+
         -- saves time every 4 seconds
         if sm.game.getCurrentTick()%160 == 0 then
             self.storage:save({time = self.sv.tickedTime})
-
-            -- sends client data
-            self.network:setClientData( {type = "currentTime", value = self.sv.currenctTime} )
-            self.network:setClientData( {type = "time", value = self.sv.tickedTime} )
         end
         local Currency = sm.json.open("$CONTENT_DATA/Json/Currency.json")
-        self.sv.oldCurrency = Currency
-        self.network:setClientData( {type = "currency", value = Currency} )
-
+        if not areTablesEqual(Currency,self.sv.oldCurrency) then
+            self.sv.oldCurrency = Currency
+            self.network:sendToClients("setClientData", {type = "currency", value = Currency} )
+        end
 
     end)
     if not status and err then
-        self.network:sendToClient(hostPlayer,"cl_sendTextMessage","#FF0000"..err)
+        if self.status1 ~= status then
+            self.status1 = status
+            self.network:sendToClient(hostPlayer,"cl_sendTextMessage","#FF0000"..err)
+        end
         print(err)
     end
 end
@@ -139,6 +160,7 @@ function AB.client_onCreate( self )
     local status, err = pcall(function()
         self.cl = {}
         self.cl.tickedTime = (1800*40)/2
+        self.cl.playerSessionTime = {}
 
         -- loads the player vaLue apon reload
         if not hostPlayer or hostPlayer.id ~= 1 then
@@ -233,71 +255,83 @@ function AB.client_onFixedUpdate( self, timeStep )
         local AMPMHour, isPM = convertToAmPm(tonumber(formatTwoDigits(math.floor(self.cl.tickedTime/2400))))
         local timeString = tostring(AMPMHour..":"..Seconds.." "..tostring(isPM and "PM" or "AM"))
         self.cl.modHUD:setText( "time", timeString)
+        if self.cl.Currency then
+            self.cl.modHUD:setText( "wallet_amount", "$"..formatWithCommas(self.cl.Currency[tostring(sm.localPlayer.getPlayer().id)][1]))
+        end
 
         -- sets the info for the compass
         local mfloor = math.floor
 		local mfmod = math.fmod
         local character = sm.localPlayer.getPlayer().character
 		
-		local coordinates = mfloor( character.worldPosition.x).. ",".. mfloor( character.worldPosition.y)
-        local cellCoord = mfloor( character.worldPosition.x / CellSize )..","..mfloor( character.worldPosition.y / CellSize )
-		local direction = character.direction
-		local yaw = math.atan2( direction.y, direction.x )
-		local rot = math.deg( yaw )
-		local textDegrees = math.ceil( rot-90 )
+        if character then
+		    local coordinates = mfloor( character.worldPosition.x).. ",".. mfloor( character.worldPosition.y)
+            local cellCoord = mfloor( character.worldPosition.x / CellSize )..","..mfloor( character.worldPosition.y / CellSize )
+		    local direction = character.direction
+		    local yaw = math.atan2( direction.y, direction.x )
+		    local rot = math.deg( yaw )
+		    local textDegrees = math.ceil( rot-90 )
 
-		if textDegrees > 0 then
-			textDegrees = textDegrees-360
-		end
-		textDegrees = math.abs(textDegrees)
+		    if textDegrees > 0 then
+		    	textDegrees = textDegrees-360
+		    end
+		    textDegrees = math.abs(textDegrees)
 
-        local compass = " --------- N.E --------- E --------- S.E ---------- S --------- S.W --------- W --------- N.W --------- N"
-        local compassLength = #compass -- Length of the compass string
-        local rangeMax = 360 -- Full 360-degree range
-        
-        -- Map `rot` to the correct position, ensuring proper alignment
-        local position = math.floor(((rangeMax - rot + 90) % rangeMax) / rangeMax * compassLength) + 1
-        
-        -- Calculate the range of characters to display
-        local displayLength = 65
-        local halfRange = math.floor(displayLength / 2)
-        
-        -- Build the display, wrapping around if necessary
-        local display = ""
-        for i = -halfRange, halfRange do
-            local index = (position + i - 1) % compassLength + 1
-            display = display .. compass:sub(index, index)
+            local compass = " --------- N.E --------- E --------- S.E ---------- S --------- S.W --------- W --------- N.W --------- N"
+            local compassLength = #compass -- Length of the compass string
+            local rangeMax = 360 -- Full 360-degree range
+
+            -- Map `rot` to the correct position, ensuring proper alignment
+            local position = math.floor(((rangeMax - rot + 90) % rangeMax) / rangeMax * compassLength) + 1
+
+            -- Calculate the range of characters to display
+            local displayLength = 65
+            local halfRange = math.floor(displayLength / 2)
+
+            -- Build the display, wrapping around if necessary
+            local display = ""
+            for i = -halfRange, halfRange do
+                local index = (position + i - 1) % compassLength + 1
+                display = display .. compass:sub(index, index)
+            end
+
+
+		    self.cl.compassHUD:setText( "CompassText0", display )
+
+		    self.cl.compassHUD:setText( "CompassDegree", tostring(textDegrees).."°" )
+		    self.cl.compassHUD:setText( "CoordText", coordinates )
+            self.cl.compassHUD:setText( "CellText", cellCoord )
         end
-        
 
-		self.cl.compassHUD:setText( "CompassText0", display )
-
-		self.cl.compassHUD:setText( "CompassDegree", tostring(textDegrees).."°" )
-		self.cl.compassHUD:setText( "CoordText", coordinates )
-        self.cl.compassHUD:setText( "CellText", cellCoord )
+        -- setting usernames
+        if sm.game.getCurrentTick()%10 == 0 then
+            for _,player in pairs(sm.player.getAllPlayers()) do
+                if player ~= sm.localPlayer.getPlayer() then
+                    self.client_onUpdateNametags(self,{text = tostring(player.name.." | "..player.id),player = player,distance = 4})
+                end
+            end
+        end
 
     end)
     if not status and err then
-        self.network:sendToServer("sv_sendMessageToHost",{text = "#FF0000"..err, player = sm.localPlayer.getPlayer()})
+        if self.status2 ~= status then
+            self.status2 = status
+            self.network:sendToServer("sv_sendMessageToHost",{text = "#FF0000"..err, player = sm.localPlayer.getPlayer()})
+        end
         print(err)
     end
 end
 
-function AB.client_onClientDataUpdate( self, data )
+function AB.setClientData( self, data )
     print(data.type)
-    local status, err = pcall(function()
-        if data.type == "time" then
-            self.cl.tickedTime = data.value
-        elseif data.type == "currency" then
-            self.cl.Currency = data.value
-            self.cl.modHUD:setText( "wallet_amount", "$"..formatWithCommas(data.value[tostring(sm.localPlayer.getPlayer().id)][1]))
-        elseif data.type == "currentTime" then
-            self.cl.currentTime = data.value
-        end
-    end)
-    if not status and err then
-        self.network:sendToServer("sv_sendMessageToHost",{text = "#FF0000"..err, player = sm.localPlayer.getPlayer()})
-        print(err)
+    if data.type == "time" then
+        self.cl.tickedTime = data.value
+    elseif data.type == "currency" then
+        self.cl.Currency = data.value
+    elseif data.type == "currentTime" then
+        self.cl.currentTime = data.value
+    elseif data.type == "playerSessionTimer" then
+        self.cl.playerSessionTime = data.value
     end
 end
 
@@ -327,7 +361,7 @@ function AB.client_onUpdateNametags(self,data)
     local character = player:getCharacter()
     if player ~= sm.localPlayer.getPlayer() then
         if player:getCharacter():isCrouching() then
-            character:setNameTag( tostring(data.text),sm.color.new(1,1,1), true, distance/4, distance/8 )
+            character:setNameTag( tostring(data.text),sm.color.new(1,1,1), true, distance/2, distance/4 )
         else
             character:setNameTag( tostring(data.text),sm.color.new(1,1,1), true, distance, distance/2 )
         end

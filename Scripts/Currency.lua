@@ -24,10 +24,11 @@ function Currency_server_onFixedUpdate(self)
                     
                     -- clears most starting items
                     local spawnedItems = {
-                        "8c7efc37-cd7c-4262-976e-39585f8527bf",
-                        "5cc12f03-275e-4c8e-b013-79fc0f913e1b",
-                        "c60b9627-fc2b-4319-97c5-05921cb976c6",
-                        "fdb8b8be-96e7-4de0-85c7-d2f42e4f33ce"
+                        "8c7efc37-cd7c-4262-976e-39585f8527bf", -- connect tool
+                        "5cc12f03-275e-4c8e-b013-79fc0f913e1b", -- lift
+                        "c60b9627-fc2b-4319-97c5-05921cb976c6", -- paint tool
+                        "fdb8b8be-96e7-4de0-85c7-d2f42e4f33ce",  -- weld tool
+                        "af89c0c4-d2bb-44dd-8300-caf29beb364c" -- hands
                     }
                     local player = checkPlayer(tonumber(id))
                     -- clears the inventory and sets it to default tools on first join
@@ -157,7 +158,7 @@ function checkCashCommand(self,data)
     local player = checkPlayer(tonumber(data[2]))
     Currency = sm.json.open("$CONTENT_DATA/Json/Currency.json")
     if player then
-        self.network:sendToClient(hostPlayer,"cl_sendTextMessage",player.name.."'s Wallet: $"..formatWithCommas(Currency[tostring(player.id)][1]).." Bank: $"..formatWithCommas(Currency[tostring(player.id)][2]).." DP: "..formatWithCommas(Currency[tostring(player.id)][3]))
+        self.network:sendToClient(hostPlayer,"cl_sendTextMessage",player.name.."'s Wallet: $"..formatWithCommas(Currency[tostring(player.id)][1]).." Bank: $"..formatWithCommas(Currency[tostring(player.id)][2]).." DP: $"..formatWithCommas(Currency[tostring(player.id)][3]))
     elseif data[2] == "gov" or data[2] == "goverment" or data[2] == "city" or data[2] == "fv" then
         self.network:sendToClient(hostPlayer,"cl_sendTextMessage","Goverment: $"..formatWithCommas(Currency["Goverment"][1]))
     else

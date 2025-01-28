@@ -365,35 +365,51 @@ function tickToTime(tick)
     return timeString
 end
 
--- Function to compare two tables
+-- Function to compare two tables deeply
 function areTablesEqual(table1, table2)
     -- If either is not a table, return false
     if type(table1) ~= "table" or type(table2) ~= "table" then
         return false
     end
 
-    -- Check if they have the same number of keys
-    local table1Keys = 0
-    local table2Keys = 0
+    -- Check if both tables have the same number of keys
+    local table1KeyCount = 0
+    local table2KeyCount = 0
     for key in pairs(table1) do
-        table1Keys = table1Keys + 1
+        table1KeyCount = table1KeyCount + 1
+        -- Ensure every key in table1 exists in table2
         if table2[key] == nil then
-            return false -- Key exists in table1 but not in table2
-        end
-    end
-    for _ in pairs(table2) do
-        table2Keys = table2Keys + 1
-    end
-    if table1Keys ~= table2Keys then
-        return false -- Different number of keys
-    end
-
-    -- Recursively compare all key-value pairs
-    for key, value in pairs(table1) do
-        if not areTablesEqual(value, table2[key]) then
             return false
         end
     end
+    for _ in pairs(table2) do
+        table2KeyCount = table2KeyCount + 1
+    end
+    if table1KeyCount ~= table2KeyCount then
+        return false
+    end
 
+    -- Compare each key-value pair deeply
+    for key, value1 in pairs(table1) do
+        local value2 = table2[key]
+
+        -- Check if the types match
+        if type(value1) ~= type(value2) then
+            return false
+        end
+
+        -- If the value is a table, compare recursively
+        if type(value1) == "table" then
+            if not areTablesEqual(value1, value2) then
+                return false
+            end
+        else
+            -- Otherwise, compare the primitive values directly
+            if value1 ~= value2 then
+                return false
+            end
+        end
+    end
+    
     return true
 end
